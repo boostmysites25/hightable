@@ -20,7 +20,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
+        <div ref={heroRef} className="relative h-screen w-full overflow-hidden overflow-x-hidden">
             {/* Background Video/Image */}
             <div className="absolute inset-0 w-full h-full">
                 <div className="absolute inset-0 bg-black/40 z-10" />

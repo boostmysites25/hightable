@@ -44,11 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} antialiased bg-[#201B35] text-white font-sans`}
+        className={`${montserrat.variable} antialiased bg-[#201B35] text-white overflow-x-hidden max-w-[100vw]`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="overflow-x-hidden w-full">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

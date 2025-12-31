@@ -51,7 +51,7 @@ const Purpose = () => {
     return (
         <section ref={containerRef} className="py-32 bg-[#1a162b] relative overflow-hidden">
             {/* Background ambience */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#AD986E]/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] md:w-[800px] h-[400px] bg-[#AD986E]/5 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-24">

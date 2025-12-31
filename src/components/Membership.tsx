@@ -35,32 +35,35 @@ const Membership = () => {
     const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.fromTo('.tier-card',
-                {
-                    y: 100,
-                    autoAlpha: 0
-                },
-                {
-                    y: 0,
-                    autoAlpha: 1,
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top 75%',
-                        toggleActions: 'play none none reverse'
+        const timer = setTimeout(() => {
+            const ctx = gsap.context(() => {
+                gsap.fromTo('.tier-card',
+                    {
+                        y: 50,
+                        autoAlpha: 0
+                    },
+                    {
+                        y: 0,
+                        autoAlpha: 1,
+                        duration: 0.8,
+                        stagger: 0.2,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        },
                     }
-                }
-            );
-        }, sectionRef);
+                );
+            }, sectionRef);
+            return () => ctx.revert();
+        }, 100);
 
-        return () => ctx.revert();
+        return () => clearTimeout(timer);
     }, []);
 
     return (
-        <section id="membership" className="py-24 bg-[#201B35] relative" ref={sectionRef}>
+        <section id="membership" className="py-24 bg-[#201B35] relative overflow-hidden" ref={sectionRef}>
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20 max-w-2xl mx-auto">
                     <h4 className="text-[#AD986E] uppercase tracking-[0.2em] mb-4 text-sm font-semibold">Exclusivity Defined</h4>

@@ -34,9 +34,9 @@ const About = () => {
 
             // Text Animation
             gsap.fromTo(textRef.current,
-                { x: 50, opacity: 0 },
+                { y: 50, opacity: 0 },
                 {
-                    x: 0,
+                    y: 0,
                     opacity: 1,
                     duration: 1,
                     delay: 0.3,
@@ -77,10 +77,10 @@ const About = () => {
                         </div>
 
                         {/* Overlapping Text - "ABOUT" */}
-                        <h2 className="absolute -bottom-6 md:-bottom-10 left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl text-white z-20 tracking-widest opacity-20 whitespace-nowrap pointer-events-none select-none">
+                        <h2 className="absolute -bottom-6 md:-bottom-10 left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl text-white z-20 tracking-wide opacity-20 whitespace-nowrap pointer-events-none select-none">
                             ABOUT
                         </h2>
-                        <h2 className="absolute -bottom-6 md:-bottom-10 left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl text-[#AD986E] z-20 tracking-widest opacity-100 whitespace-nowrap">
+                        <h2 className="absolute -bottom-6 md:-bottom-10 left-1/2 transform -translate-x-1/2 text-5xl md:text-7xl text-[#AD986E] z-20 tracking-wide opacity-100 whitespace-nowrap">
                             ABOUT
                         </h2>
                     </div>

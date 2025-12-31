@@ -9,6 +9,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const navRef = useRef<HTMLElement>(null);
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,14 +44,41 @@ const Navbar = () => {
         }
     }, [isScrolled]);
 
+    // Mobile menu animation
+    useEffect(() => {
+        if (mobileMenuRef.current) {
+            if (isOpen) {
+                gsap.fromTo(mobileMenuRef.current,
+                    {
+                        height: 0,
+                        opacity: 0,
+                    },
+                    {
+                        height: 'auto',
+                        opacity: 1,
+                        duration: 0.4,
+                        ease: 'power2.out',
+                    }
+                );
+            } else {
+                gsap.to(mobileMenuRef.current, {
+                    height: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power2.in',
+                });
+            }
+        }
+    }, [isOpen]);
+
     return (
         <nav
             ref={navRef}
-            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'
+            className={`fixed w-full z-50 transition-all duration-300 overflow-x-hidden ${isScrolled ? 'py-4' : 'py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link href="/" className="text-2xl  font-bold text-white tracking-widest">
+                <Link href="/" className="text-2xl  font-bold text-white tracking-wide md:tracking-widest">
                     HIGH TABLE
                 </Link>
 
@@ -72,7 +100,7 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden text-white z-50"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,25 +108,27 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-[#201B35] border-t border-[#AD986E]/20">
-                    <div className="flex flex-col p-6 space-y-4">
-                        {['Membership'].map((item) => (
-                            <Link
-                                key={item}
-                                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                                className="text-white/80 hover:text-[#AD986E] transition-colors uppercase text-sm tracking-wider"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {item}
-                            </Link>
-                        ))}
-                        <button className="btn btn-primary btn-md w-full">
-                            LOGIN
-                        </button>
-                    </div>
+            <div
+                ref={mobileMenuRef}
+                className="md:hidden absolute top-full left-0 w-full bg-[#201B35] border-t border-[#AD986E]/20 overflow-hidden"
+                style={{ height: 0, opacity: 0 }}
+            >
+                <div className="flex flex-col p-6 space-y-4">
+                    {['Membership'].map((item) => (
+                        <Link
+                            key={item}
+                            href={`#${item.toLowerCase().replace(' ', '-')}`}
+                            className="text-white/80 hover:text-[#AD986E] transition-colors uppercase text-sm tracking-wider"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {item}
+                        </Link>
+                    ))}
+                    <button className="btn btn-primary btn-md w-full">
+                        LOGIN
+                    </button>
                 </div>
-            )}
+            </div>
         </nav>
     );
 };

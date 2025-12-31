@@ -39,9 +39,9 @@ const FeatureCard = ({ title, description, icon: Icon, imageSrc, delay }: { titl
                 </p>
             </div>
 
-            <div className="flex items-center text-[#AD986E] uppercase tracking-wider text-xs font-semibold transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150">
+            {/* <div className="flex items-center text-[#AD986E] uppercase tracking-wider text-xs font-semibold transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150">
                 Explore <ArrowRight size={14} className="ml-2 group-hover:translate-x-2 transition-transform" />
-            </div>
+            </div> */}
         </div>
     </div>
 );

@@ -31,11 +31,11 @@ const World = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 md:py-32 bg-[#1a162b] relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#AD986E]/5 blur-[100px] rounded-full pointer-events-none" />
+        <section ref={sectionRef} className="py-24 md:py-32 bg-[#1a162b] relative overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] md:w-[800px] h-[400px] bg-[#AD986E]/5 blur-[100px] rounded-full pointer-events-none" />
             <div className="container mx-auto px-6 max-w-4xl text-center">
 
-                <h2 className="world-text text-3xl md:text-4xl lg:text-[2.75rem] uppercase tracking-widest text-white mb-8 font-light">
+                <h2 className="world-text text-3xl md:text-4xl lg:text-[2.75rem] uppercase tracking-wide text-white mb-8 font-light">
                     A World For The Few
                 </h2>
 
