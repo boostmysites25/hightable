@@ -74,8 +74,8 @@ const Navbar = () => {
     return (
         <nav
             ref={navRef}
-            className={`fixed w-full z-50 transition-all duration-300 overflow-x-hidden ${isScrolled ? 'py-4' : 'py-6'
-                }`}
+            className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'
+                } ${isOpen ? 'bg-[#201B35]' : 'bg-transparent'}`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <Link href="/" className="text-2xl  font-bold text-white tracking-wide md:tracking-widest">
