@@ -49,36 +49,36 @@ const Purpose = () => {
     }, []);
 
     return (
-        <section ref={containerRef} className="py-32 bg-[#1a162b] relative overflow-hidden">
+        <section ref={containerRef} id="purpose" className="py-32 bg-[#3D0066] relative overflow-hidden">
             {/* Background ambience */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] md:w-[800px] h-[400px] bg-[#AD986E]/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] md:w-[800px] h-[400px] bg-[#C78D17]/5 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row gap-12 md:gap-24">
                     {/* Visual Anchor - Vertical Line */}
                     <div className="hidden md:flex flex-col items-center w-12 pt-4 relative">
-                        <div className="w-3 h-3 rounded-full bg-[#AD986E] mb-4" />
-                        <div ref={lineRef} className="w-px bg-linear-to-b from-[#AD986E] to-transparent opacity-50 grow" />
+                        <div className="w-3 h-3 rounded-full bg-[#C78D17] mb-4" />
+                        <div ref={lineRef} className="w-px bg-linear-to-b from-[#C78D17] to-transparent opacity-50 grow" />
                     </div>
 
                     <div className="flex-1">
                         <div className="purpose-text">
-                            <h4 className="text-[#AD986E] uppercase tracking-[0.2em] mb-6 text-sm font-semibold">The Purpose</h4>
-                            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] uppercase tracking-wide text-white mb-8 leading-tight">
-                                Connection Without <br />
-                                <span className="text-[#AD986E]">Compromise</span>
+                            <h4 className="text-[#C78D17] uppercase tracking-[0.2em] mb-6 text-sm font-semibold">The Mission</h4>
+                            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-serif text-[#EFD9F7] mb-8 leading-tight">
+                                A Sovereign <br />
+                                <span className="text-[#C78D17]">Digital Territory</span>
                             </h2>
                         </div>
 
-                        <div className="purpose-text space-y-8 text-lg font-light leading-relaxed text-gray-300 max-w-2xl">
+                        <div className="purpose-text space-y-8 text-lg font-light leading-relaxed text-[#EFD9F7]/80 max-w-2xl">
                             <p>
-                                At the pinnacle of success, the world becomes paradoxically smaller. True peers are few, and spaces for genuine, unguarded collaboration are rare.
+                                At the highest levels of influence, privacy is the ultimate luxury. The world is noisy, open, and exposed. High Table is the antidote.
                             </p>
                             <p>
-                                High Table exists to solve the isolation of excellence. We are not just a platform; we are a sovereign digital territory where trust is the currency and discretion is the law.
+                                We have constructed a closed ecosystem for those who shape the future. No noise. No exposure. Just pure, verified connection in a zero-trust environment.
                             </p>
-                            <div className="pl-6 border-l-2 border-[#AD986E]/30 italic text-white/80">
-                                "To empower the world's architects to build the future, together, in absolute confidence."
+                            <div className="pl-6 border-l-2 border-[#C78D17]/30 italic text-white/90">
+                                "The only space where the world's architects can speak freely."
                             </div>
                         </div>
                     </div>
@@ -86,13 +86,13 @@ const Purpose = () => {
                     {/* Right side stats or abstract element */}
                     <div className="md:w-1/3 flex items-center justify-center purpose-text">
                         <div className="grid grid-cols-1 gap-12 text-center md:text-left">
-                            <div>
-                                <div className="text-4xl md:text-5xl uppercase text-white mb-2">Zero</div>
-                                <div className="text-xs uppercase tracking-widest text-[#AD986E]">Trust Architecture</div>
+                            <div className="p-8 border border-[#C78D17]/10 bg-[#C78D17]/5 backdrop-blur-sm">
+                                <div className="text-4xl md:text-5xl font-serif text-[#EFD9F7] mb-2">Zero</div>
+                                <div className="text-xs uppercase tracking-widest text-[#C78D17]">Trust Architecture</div>
                             </div>
-                            <div>
-                                <div className="text-4xl md:text-5xl text-white mb-2">100%</div>
-                                <div className="text-xs uppercase tracking-widest text-[#AD986E]">Verified Members</div>
+                            <div className="p-8 border border-[#C78D17]/10 bg-[#C78D17]/5 backdrop-blur-sm">
+                                <div className="text-4xl md:text-5xl font-serif text-[#EFD9F7] mb-2">100%</div>
+                                <div className="text-xs uppercase tracking-widest text-[#C78D17]">Verified Access</div>
                             </div>
                         </div>
                     </div>

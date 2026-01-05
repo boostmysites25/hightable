@@ -1,19 +1,43 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Purpose from "@/components/Purpose";
-import World from "@/components/World";
-import Features from "@/components/Features";
-import Membership from "@/components/Membership";
+'use client';
+
+import { useEffect } from 'react';
+import Hero from '@/components/Hero';
+import Membership from '@/components/Membership';
+import About from '@/components/About';
+import World from '@/components/World';
+import MembersOverview from '@/components/MembersOverview';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+// Note: MembersOverview might be missing on disk, skipping import for now or will add later.
 
 export default function Home() {
+
+  useEffect(() => {
+    // Force scroll to top on load
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <main className="min-h-screen">
+    <main className="bg-[#3D0066] min-h-screen text-[#EFD9F7] selection:bg-[#C78D17] selection:text-[#3D0066]">
+      <Navbar />
+      {/* 1. The Entrance */}
       <Hero />
-      <World />
+
+      {/* 5. The Profile (Who is here) */}
       <About />
-      <Purpose />
-      <Features />
+
+      {/* 3. The Global Context */}
+      <World />
+
+
+      {/* 4.5 The Table (Members Overview) */}
+      <MembersOverview />
+
+
+      {/* 6. The Gate (Access) */}
       <Membership />
+       <Footer />
     </main>
   );
 }

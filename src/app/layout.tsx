@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 // Configuring Riviera Nights. 
 // User must upload 'RivieraNights-Regular.woff2' and 'RivieraNights-Bold.woff2' to public/fonts/
@@ -47,9 +45,9 @@ export default function RootLayout({
         className={`${montserrat.variable} antialiased bg-[#201B35] text-white overflow-x-hidden max-w-[100vw]`}
       >
         <div className="overflow-x-hidden w-full">
-          <Navbar />
+          
           {children}
-          <Footer />
+         
         </div>
       </body>
     </html>

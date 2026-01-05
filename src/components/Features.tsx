@@ -1,116 +1,138 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Shield, Briefcase, Users, LayoutGrid, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, Shield } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
-gsap.registerPlugin(ScrollTrigger);
+// Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
 
-const FeatureCard = ({ title, description, icon: Icon, imageSrc, delay }: { title: string, description: string, icon: any, imageSrc: string, delay: number }) => (
-    <div className="feature-card relative h-[500px] overflow-hidden border border-[#AD986E]/20 group cursor-pointer">
-        {/* Background Image */}
-        <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
-            <Image
-                src={imageSrc}
-                alt={title}
-                fill
-                className="object-cover"
-            />
-        </div>
+// Feature Data
+const baseFeatures = [
+    {
+        title: "The Deal Room",
+        description: "Direct access to off-market opportunities. Venture capital, real estate, and private equity deployments vetted for high-yield potential.",
+        icon: Briefcase,
+        imageSrc: "/assets/feature-1.png"
+    },
+    {
+        title: "Client Experiences",
+        description: "The Inner Circle. Curated gatherings, private galas, and experiential retreats designed to foster deep, high-trust relationships.",
+        icon: Users,
+        imageSrc: "/assets/feature-2.png"
+    },
+    {
+        title: "Board Meetings",
+        description: "Global Governance. A secure, digital boardroom architecture for high-stakes decision making and structured council interactions.",
+        icon: Shield,
+        imageSrc: "/assets/feature-3.png"
+    }
+];
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#151221] via-[#151221]/90 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
-
-        {/* Content */}
-        <div className="absolute inset-0 p-8 flex flex-col justify-end">
-            <div className="mb-6 text-[#AD986E] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <Icon size={40} strokeWidth={1} />
-            </div>
-
-            <h3 className="text-2xl text-white mb-4 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                {title}
-            </h3>
-
-            <div className="overflow-hidden">
-                <p className="text-gray-300 font-light leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                    {description}
-                </p>
-            </div>
-
-            {/* <div className="flex items-center text-[#AD986E] uppercase tracking-wider text-xs font-semibold transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150">
-                Explore <ArrowRight size={14} className="ml-2 group-hover:translate-x-2 transition-transform" />
-            </div> */}
-        </div>
-    </div>
-);
+// Duplicate for smooth loop
+const features = [...baseFeatures, ...baseFeatures, ...baseFeatures];
 
 const Features = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const ctx = gsap.context(() => {
-                gsap.fromTo('.feature-card',
-                    {
-                        y: 50,
-                        autoAlpha: 0
-                    },
-                    {
-                        y: 0,
-                        autoAlpha: 1,
-                        duration: 0.8,
-                        stagger: 0.2,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: containerRef.current,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        },
-                    }
-                );
-            }, containerRef);
-            return () => ctx.revert();
-        }, 100);
-
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
-        <section className="py-24 bg-[#1a162b] relative overflow-hidden" ref={containerRef}>
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-[#AD986E]/5 blur-[120px] rounded-full" />
+        <section className="py-24 bg-[#3D0066] relative overflow-hidden flex flex-col justify-center">
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
-                    <h4 className="text-[#AD986E] uppercase tracking-[0.2em] mb-4 text-sm font-semibold">Our Ecosystem</h4>
-                    <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] uppercase tracking-wide leading-tight text-white">The Pillars of High Table</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
-                    <FeatureCard
-                        title="Strategic Deployments"
-                        description="A sanctuary for vetted capital. Discover high-value acquisition and equity opportunities where privacy ensures the integrity of every transaction."
-                        icon={Briefcase}
-                        imageSrc="/assets/feature-1.png"
-                        delay={0}
-                    />
-                    <FeatureCard
-                        title="The Inner Circle"
-                        description="Forging alliances with the world's architects. A sovereign network where influence amplifies through trusted, verified connection."
-                        icon={Users}
-                        imageSrc="/assets/feature-2.png"
-                        delay={0.2}
-                    />
-                    <FeatureCard
-                        title="Global Governance"
-                        description="Where decisions shape economies. Secure, high-stakes environments designed for the conversations that matter most."
-                        icon={LayoutGrid}
-                        imageSrc="/assets/feature-3.png"
-                        delay={0.4}
-                    />
-                </div>
+            <div className="container mx-auto px-6 mb-12 relative z-20 text-center">
+                <h4 className="text-[#C78D17] uppercase tracking-[0.2em] mb-4 text-sm font-semibold">The Utility</h4>
+                <h2 className="text-3xl md:text-5xl font-serif text-[#EFD9F7] tracking-wide">
+                    Sovereign Systems
+                </h2>
             </div>
+
+            {/* Slider Container - Swiper */}
+            <div className="w-full relative z-10 flex justify-center">
+                <Swiper
+                    effect={'coverflow'}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={'auto'}
+                    initialSlide={1}
+                    loop={true}
+                    speed={800}
+                    spaceBetween={40}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
+                    coverflowEffect={{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 200,
+                        modifier: 1,
+                        slideShadows: false,
+                    }}
+                    pagination={{ clickable: true, dynamicBullets: true }}
+                    modules={[EffectCoverflow, Pagination, Autoplay]}
+                    className="swiper_container pb-12! w-full"
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 30
+                        },
+                        1024: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 40
+                        },
+                    }}
+                >
+                    {features.map((item, index) => (
+                        <SwiperSlide key={index} className="w-[85%]! md:w-[900px]! aspect-video relative transition-all duration-500 rounded-xl overflow-hidden self-center">
+                            {({ isActive }) => (
+                                <div className={`relative w-full h-full border transition-all duration-500 ${isActive ? 'border-[#C78D17]/40 shadow-2xl shadow-[#C78D17]/10 scale-100 opacity-100' : 'border-[#C78D17]/10 scale-90 opacity-40 grayscale'}`}>
+                                    {/* Image */}
+                                    <Image
+                                        src={item.imageSrc}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover"
+                                    />
+
+                                    {/* Gradient Overlay */}
+                                    <div className={`absolute inset-0 bg-linear-to-t from-[#3D0066] via-[#3D0066]/20 to-transparent ${isActive ? 'opacity-80' : 'opacity-90'}`} />
+
+                                    {/* Content */}
+                                    <div className={`absolute bottom-0 left-0 w-full p-6 md:p-10 transition-all duration-500 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+                                        <div className="flex items-center gap-4 mb-3 text-[#C78D17]">
+                                            <item.icon size={28} strokeWidth={1} />
+                                            <div className="h-px w-12 bg-[#C78D17]/50" />
+                                        </div>
+                                        <h3 className="text-2xl md:text-3xl font-serif text-[#EFD9F7] mb-2">{item.title}</h3>
+                                        <p className="text-[#EFD9F7]/70 font-light leading-relaxed max-w-2xl text-sm md:text-base">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+
+            {/* Custom Styles for Swiper Pagination to match Gold theme */}
+            <style jsx global>{`
+                .swiper-pagination-bullet {
+                    background: #C78D17 !important;
+                    opacity: 0.2;
+                }
+                .swiper-pagination-bullet-active {
+                    opacity: 1;
+                    width: 24px;
+                    border-radius: 4px;
+                    transition: all 0.3s ease;
+                }
+            `}</style>
         </section>
     );
 };
