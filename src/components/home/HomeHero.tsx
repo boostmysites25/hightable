@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const HomeHero = () => {
     const titleRef = useRef(null);
@@ -49,12 +50,12 @@ const HomeHero = () => {
                     {/* Territory */}
                     The Elite Club
                 </p>
-                <button ref={buttonRef} className="group relative px-12 py-4 bg-transparent border border-[#C78D17]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer opacity-0 will-change-transform mt-8">
+                <Link href='/application/form' ref={buttonRef} className="group relative px-12 py-4 bg-transparent border border-[#C78D17]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer opacity-0 will-change-transform mt-8">
                     <span className="relative z-10 text-[#EFD9F7] text-sm tracking-widest uppercase group-hover:text-[#3D0066] transition-colors cursor-pointer">
                         Request Access
                     </span>
                     <div className="absolute inset-0 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-                </button>
+                </Link>
             </div>
         </section>
     );
