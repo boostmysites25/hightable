@@ -8,6 +8,16 @@ const HomeNav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -64,17 +74,17 @@ const HomeNav = () => {
     return (
         <>
             {/* Fixed Nav Overlay */}
-            <nav className="fixed inset-0 z-50 pointer-events-none p-6 md:p-12 mix-blend-difference text-[#EFD9F7]">
+            <nav className={`fixed inset-0 z-50 pointer-events-none px-4 py-3 flex justify-between items-center md:p-12 h-fit text-[#EFD9F7] ${isScrolled ? "backdrop-blur-sm" : ""}`}>
 
                 {/* Top Left - Logo/Home */}
-                <div className="absolute top-6 left-6 md:top-12 md:left-12 pointer-events-auto z-60">
+                <div className="md:absolute top-6 left-6 md:top-12 md:left-12 pointer-events-auto z-60">
                     <Link href="/" className="text-sm md:text-base tracking-[0.2em] hover:opacity-70 transition-opacity font-serif">
                         HIGH TABLE
                     </Link>
                 </div>
 
                 {/* Top Right - Menu Trigger */}
-                <div className="absolute top-6 right-6 md:top-12 md:right-12 pointer-events-auto z-60">
+                <div className="md:absolute top-6 right-6 md:top-12 md:right-12 pointer-events-auto z-60">
                     <button
                         onClick={toggleMenu}
                         className="w-12 h-12 flex flex-col justify-center items-end gap-1.5 group cursor-pointer"
@@ -105,7 +115,7 @@ const HomeNav = () => {
                             href={item.href}
                             ref={addToRefs}
                             onClick={() => setIsMenuOpen(false)}
-                            className="group relative text-4xl md:text-6xl uppercase text-[#EFD9F7] hover:text-[#C78D17] transition-colors tracking-widest opacity-0"
+                            className="group relative text-2xl md:text-6xl uppercase text-[#EFD9F7] hover:text-[#C78D17] transition-colors tracking-widest opacity-0"
                         >
                             <span className="relative z-10">{item.name}</span>
                             <span className="absolute left-0 -bottom-2 w-full h-0.5 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center" />

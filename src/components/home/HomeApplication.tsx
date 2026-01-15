@@ -9,7 +9,7 @@ const tiers = [
     {
         id: 'tier1',
         title: 'Elite',
-        subtitle: 'Tier 1 Membership',
+        subtitle: 'AXIS Membership',
         description: 'For emerging leaders with high-growth trajectories.',
         netWorth: 'Target Net Worth: $250k – $600k',
         price: '$5,000',
@@ -25,7 +25,7 @@ const tiers = [
     {
         id: 'tier2',
         title: 'Sovereign',
-        subtitle: 'Tier 2 Membership',
+        subtitle: 'VAULT Membership',
         description: 'The standard for established visionaries and capital allocators.',
         netWorth: 'Target Net Worth: $600k – $12M',
         price: '$10,000',
@@ -41,11 +41,11 @@ const tiers = [
     {
         id: 'tier3',
         title: 'Tycoon',
-        subtitle: 'Tier 3 Membership',
+        subtitle: 'COTERIE Membership',
         description: 'For industry titans who shape markets and build empires.',
         netWorth: 'Target Net Worth: $12M+',
-        price: 'Free',
-        period: 'Year 1 (Year 2+: $30,000)',
+        price: '$30,000',
+        period: 'Annual Subscription (Excl. Tax)',
         benefits: [
             'Global Access with +1 Guest privileges',
             'Exclusive "Tycoon" mentorship circles',
@@ -121,7 +121,7 @@ const HomeApplication = () => {
             <div className="w-full md:w-2/5 relative bg-[#3D0066] flex flex-col justify-center p-8 md:p-16">
                 <div ref={detailsRef} className="relative z-10 w-full opacity-100">
                     <h4 className="text-[#C78D17] text-xs md:text-sm uppercase tracking-[0.2em] mb-2">{activeTier.subtitle}</h4>
-                    <p className="text-[#EFD9F7]/50 text-xs tracking-wider mb-6">{activeTier.netWorth}</p>
+                    {/* <p className="text-[#EFD9F7]/50 text-xs tracking-wider mb-6">{activeTier.netWorth}</p> */}
 
                     <p className="text-[#EFD9F7]/80 text-sm md:text-base mb-8 leading-relaxed font-light">
                         {activeTier.description}

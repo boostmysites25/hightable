@@ -6,19 +6,19 @@ import { Suspense } from 'react';
 
 const appTiers: Record<string, { title: string; dues: string; initiation: string }> = {
     'tier1': {
-        title: 'Elite Membership (Tier 1)',
-        dues: 'Annual Dues: $5,000',
-        initiation: 'Initiation Fee: $1,500 (One-time)'
+        title: 'Elite Membership (AXIS)',
+        dues: 'Annual Dues: $5,000 (Excl. Tax)',
+        initiation: 'Registration Fee: $1,500 (One-time, Excl. Tax)'
     },
     'tier2': {
-        title: 'Sovereign Membership (Tier 2)',
-        dues: 'Annual Dues: $10,000',
-        initiation: 'Initiation Fee: $3,000 (One-time)'
+        title: 'Sovereign Membership (VAULT)',
+        dues: 'Annual Dues: $10,000 (Excl. Tax)',
+        initiation: 'Registration Fee: $3,000 (One-time, Excl. Tax)'
     },
     'tier3': {
-        title: 'Tycoon Membership (Tier 3)',
-        dues: 'Annual Dues: Free (Year 1) / $30,000 (Year 2+)',
-        initiation: 'Initiation Fee: $10,000 (One-time)'
+        title: 'Tycoon Membership (COTERIE)',
+        dues: 'Annual Dues: $30,000 (Excl. Tax)',
+        initiation: 'Registration Fee: $10,000 (One-time, Excl. Tax)'
     }
 };
 
@@ -77,9 +77,9 @@ const Content = () => {
                     </div>
 
                     <div className="space-y-2 text-sm text-[#EFD9F7]/50 italic">
-                        {tierId === 'tier1' && <p>* Applicants for Elite Membership must possess a Net Worth between $250k - $600k.</p>}
+                        {/* {tierId === 'tier1' && <p>* Applicants for Elite Membership must possess a Net Worth between $250k - $600k.</p>}
                         {tierId === 'tier2' && <p>* Applicants for Sovereign Membership must possess a Net Worth between $600k - $12M.</p>}
-                        {tierId === 'tier3' && <p>* Applicants for Tycoon Membership must demonstrate a Net Worth of $12M+.</p>}
+                        {tierId === 'tier3' && <p>* Applicants for Tycoon Membership must demonstrate a Net Worth of $12M+.</p>} */}
                         <p>* Your billing details will not be charged until your application has been formally accepted by the Committee.</p>
                     </div>
 

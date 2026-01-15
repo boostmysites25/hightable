@@ -38,52 +38,43 @@ const ApplicationForm = () => {
                     {/* STEP 1 */}
                     {step === 1 && (
                         <>
-                            {/* Personal Information */}
+                            {/* Priority Information */}
                             <div className="space-y-8">
                                 <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Membership Application</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                                {/* 1. Zip & Country */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <InputGroup label="Zip / Postal Code" />
+                                    <SelectGroup label="Country" options={countries.map(c => c.name)} />
+                                </div>
+
+                                {/* 2. Full Name */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <InputGroup label="First Name" />
-                                    <InputGroup label="Middle Name" required={false} />
                                     <InputGroup label="Last Name" />
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <InputGroup label="Date of Birth" type="date" />
-                                    <SelectGroup label="Gender" options={['Male', 'Female', 'Other', 'Prefer not to say']} />
+                                    <InputGroup label="Middle Name" required={false} />
+                                    <InputGroup label="Preferred Name" required={false} placeholder="e.g. Magic Johnson" />
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <InputGroup label="Instagram" required={false} />
-                                    <InputGroup label="Email Address" type="email" />
-                                    <div className="grid grid-cols-[140px_1fr] gap-2">
-                                        <SelectGroup label="Code" options={countries.map(c => `${c.code} (${c.name})`)} placeholder="Code" />
-                                        <InputGroup label="Phone Number" type="tel" placeholder="" />
-                                    </div>
-                                </div>
-                            </div>
 
-
-                            {/* Profile Photo */}
-                            <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
-                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Your Profile Photo</h2>
+                                {/* 4 & 5. Company Title & Website */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <FileUpload label="Profile Picture" subtext="Please provide a clear, recent headshot in high-resolution" />
-                                    <FileUpload label="Driver License or Govt Issued ID" subtext="Please provide a clear photo of your ID" />
+                                    <InputGroup label="Company Title" />
+                                    <InputGroup label="Company Website" />
                                 </div>
-                            </div>
 
-                            {/* Address */}
-                            <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
-                                <h2 className="text-[#EFD9F7]/80 text-sm uppercase tracking-widest">Primary Residence</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <InputGroup label="Address Line 1" />
-                                    <InputGroup label="Suite / Apt" required={false} />
-                                </div>
-                                <InputGroup label="Address Line 2" required={false} />
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <InputGroup label="City" />
-                                    <InputGroup label="State or County" />
-                                    <InputGroup label="Zip / Postal Code" />
-                                </div>
-                                <SelectGroup label="Country" options={countries.map(c => c.name)} />
+                                {/* 6. Industry */}
+                                <SelectGroup label="Which industry do you work in?" options={['Finance', 'Technology', 'Real Estate', 'Art', 'Other']} />
+
+                                {/* 7. Professional Background */}
+                                <TextAreaGroup label="Professional Background" subtext="Tell us about your professional work and passions" />
+
+                                {/* 8. Instagram Handle */}
+                                <InputGroup label="Instagram Handle" required={false} />
+
+                                {/* 9. Membership Interest */}
+                                <TextAreaGroup label="Membership Interest" subtext="Why do you like to join the HighTable?" />
                             </div>
                         </>
                     )}
@@ -91,25 +82,61 @@ const ApplicationForm = () => {
                     {/* STEP 2 */}
                     {step === 2 && (
                         <>
-                            {/* About You */}
+                            {/* Contact & Personal Details */}
                             <div className="space-y-8">
-                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">About You</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <InputGroup label="Company" />
-                                    <InputGroup label="Title" />
-                                    <InputGroup label="Company Website" required={false} />
-                                </div>
-                                <InputGroup label="LinkedIn" />
-                                <SelectGroup label="Which industry do you work in?" options={['Finance', 'Technology', 'Real Estate', 'Art', 'Other']} />
+                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Additional Details</h2>
 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                    <InputGroup label="Assistant Name" required={false} />
-                                    <InputGroup label="Assistant Email" type="email" required={false} />
-                                    <InputGroup label="Assistant Telephone" type="tel" required={false} />
+                                {/* Contact Info (Moved from Step 1) */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <InputGroup label="Email Address" type="email" />
+                                    <div className="grid grid-cols-[140px_1fr] gap-2">
+                                        <SelectGroup label="Code" options={countries.map(c => `${c.code} (${c.name})`)} placeholder="Code" />
+                                        <InputGroup label="Phone Number" type="tel" placeholder="" />
+                                    </div>
                                 </div>
 
-                                <TextAreaGroup label="Tell us about your professional work & passions" subtext="50 words minimum" />
-                                <TextAreaGroup label="Why would you like to join High Table?" subtext="50 words minimum" />
+                                {/* Personal Demographics (Moved from Step 1) */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <InputGroup label="Date of Birth" type="date" />
+                                    <SelectGroup label="Gender" options={['Male', 'Female', 'Other', 'Prefer not to say']} />
+                                </div>
+
+                                {/* Detailed Address (Remaining fields from Step 1's Address section) */}
+                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
+                                    <h2 className="text-[#EFD9F7]/80 text-sm uppercase tracking-widest">Primary Residence Details</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <InputGroup label="Address Line 1" />
+                                        <InputGroup label="Suite / Apt" required={false} />
+                                    </div>
+                                    <InputGroup label="Address Line 2" required={false} />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <InputGroup label="City" />
+                                        <InputGroup label="State or County" />
+                                    </div>
+                                </div>
+
+                                {/* Social & Assistant (From Step 2) */}
+                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <InputGroup label="Company" />
+                                        <InputGroup label="LinkedIn" />
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                        <InputGroup label="Assistant Name" required={false} />
+                                        <InputGroup label="Assistant Email" type="email" required={false} />
+                                        <InputGroup label="Assistant Telephone" type="tel" required={false} />
+                                    </div>
+                                </div>
+
+                                {/* Documents (Moved from Step 1) */}
+                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
+                                    <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Documentation</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <FileUpload label="Profile Picture" subtext="Please provide a clear, recent headshot in high-resolution" />
+                                        <FileUpload label="Driver License or Govt Issued ID" subtext="Please provide a clear photo of your ID" />
+                                    </div>
+                                </div>
                             </div>
                         </>
                     )}
@@ -126,7 +153,7 @@ const ApplicationForm = () => {
                                 <label className="text-[#EFD9F7] text-xs font-bold uppercase tracking-wider block">* Pricing Options</label>
 
                                 <div className="space-y-4">
-                                    {/* Tier 1 */}
+                                    {/* AXIS */}
                                     <div
                                         onClick={() => setSelectedTier('tier-1')}
                                         className={`border ${selectedTier === 'tier-1' ? 'border-[#C78D17] bg-[#C78D17]/10' : 'border-[#EFD9F7]/20'} rounded-lg p-6 cursor-pointer hover:border-[#C78D17] transition-all flex items-start gap-4`}
@@ -135,14 +162,13 @@ const ApplicationForm = () => {
                                             {selectedTier === 'tier-1' && <div className="w-3 h-3 rounded-full bg-[#C78D17]" />}
                                         </div>
                                         <div>
-                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Elite Membership</h3>
-                                            <p className="text-[#C78D17] text-3xl  mb-1">$5,000</p>
-                                            <p className="text-[#EFD9F7] text-sm">per annum</p>
-                                            <p className="text-[#EFD9F7]/60 text-sm italic">$1,500 Initiation Fee</p>
+                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Elite Membership (AXIS)</h3>
+                                            <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $1,500 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
                                         </div>
                                     </div>
 
-                                    {/* Tier 2 */}
+                                    {/* VAULT */}
                                     <div
                                         onClick={() => setSelectedTier('tier-2')}
                                         className={`border ${selectedTier === 'tier-2' ? 'border-[#C78D17] bg-[#C78D17]/10' : 'border-[#EFD9F7]/20'} rounded-lg p-6 cursor-pointer hover:border-[#C78D17] transition-all flex items-start gap-4`}
@@ -151,14 +177,13 @@ const ApplicationForm = () => {
                                             {selectedTier === 'tier-2' && <div className="w-3 h-3 rounded-full bg-[#C78D17]" />}
                                         </div>
                                         <div>
-                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Sovereign Membership</h3>
-                                            <p className="text-[#C78D17] text-3xl  mb-1">$10,000</p>
-                                            <p className="text-[#EFD9F7] text-sm">per annum</p>
-                                            <p className="text-[#EFD9F7]/60 text-sm italic">$3,000 Initiation Fee</p>
+                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Sovereign Membership (VAULT)</h3>
+                                            <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $3,000 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
                                         </div>
                                     </div>
 
-                                    {/* Tier 3 */}
+                                    {/* COTERIE */}
                                     <div
                                         onClick={() => setSelectedTier('tier-3')}
                                         className={`border ${selectedTier === 'tier-3' ? 'border-[#C78D17] bg-[#C78D17]/10' : 'border-[#EFD9F7]/20'} rounded-lg p-6 cursor-pointer hover:border-[#C78D17] transition-all flex items-start gap-4`}
@@ -167,20 +192,22 @@ const ApplicationForm = () => {
                                             {selectedTier === 'tier-3' && <div className="w-3 h-3 rounded-full bg-[#C78D17]" />}
                                         </div>
                                         <div>
-                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Tycoon Membership</h3>
-                                            <p className="text-[#C78D17] text-3xl  mb-1">$30,000</p>
-                                            <p className="text-[#EFD9F7] text-sm">per annum (Year 2+)</p>
-                                            <p className="text-[#EFD9F7]/60 text-sm italic">$10,000 Initiation Fee</p>
+                                            <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Tycoon Membership (COTERIE)</h3>
+                                            <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $10,000 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
                                         </div>
                                     </div>
                                 </div>
+                                <p className="text-[#C78D17] text-xs italic mt-2">
+                                    * Registration charges are non-refundable.
+                                </p>
                             </div>
 
                             {/* Payment Section */}
                             <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
                                 <div className="space-y-4">
                                     <p className="text-[#EFD9F7]/80 text-sm leading-relaxed">
-                                        Your provided billing details will not be charged until your membership application has been reviewed and accepted by our Membership Committee. At which point you will be notified via Email and have 48 Hours to confirm your membership.
+                                        Your provided billing details will not be charged until your membership application has been reviewed and accepted by our Membership Committee. At which point you will be notified via Email and have 2 working days to confirm your membership or for further clarification.
                                     </p>
                                 </div>
 
@@ -219,8 +246,8 @@ const ApplicationForm = () => {
 
                                     <SelectGroup label="Country" options={countries.map(c => c.name)} />
 
-                                    <p className="text-[#EFD9F7]/60 text-xs">
-                                        By providing your card information, you allow High Table to charge your card for future payments in accordance with their terms.
+                                    <p className="text-[#EFD9F7]/60 text-xs text-justify">
+                                        By providing your card information, you allow High Table to charge your card for the <span className="text-[#C78D17]">Non-Refundable Registration Fee (Excl. Tax)</span> upon submission/acceptance, and future payments in accordance with membership terms.
                                     </p>
                                 </div>
                             </div>
@@ -242,7 +269,7 @@ const ApplicationForm = () => {
                                             {consent && <span className="text-[#3D0066] text-sm font-bold">✓</span>}
                                         </div>
                                         <span className="text-[#EFD9F7] text-sm group-hover:text-[#C78D17] transition-colors">
-                                            I give my consent for High Table to use my provided information. See our <span className="underline">Privacy Policy</span>
+                                            I give my consent for High Table to process my application data. I agree to the <a href="/terms-of-service" target="_blank" className="underline hover:text-[#C78D17]">Terms of Service</a> and acknowledge the <a href="/privacy-policy" target="_blank" className="underline hover:text-[#C78D17]">Privacy Policy</a>.
                                         </span>
                                     </label>
                                 </div>

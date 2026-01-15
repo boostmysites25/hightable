@@ -29,7 +29,7 @@ const HomeHero = () => {
     }, []);
 
     return (
-        <section className="h-screen w-full relative snap-start flex items-center justify-center overflow-hidden">
+        <section className="h-screen w-full relative snap-start flex items-center justify-center overflow-hidden bg-black">
             <video
                 autoPlay
                 loop
@@ -37,9 +37,9 @@ const HomeHero = () => {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
             >
-                <source src="/assets/background-video.mp4" type="video/mp4" />
+                <source src="/assets/background-video2.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-[#3D0066]/40" />
+            {/* <div className="absolute inset-0 bg-[#3D0066]/40" /> */}
 
             <div className="relative z-10 text-center mix-blend-plus-lighter flex flex-col items-center">
                 <h1 ref={titleRef} className="text-[12vw] md:text-[5vw] uppercase text-[#EFD9F7] leading-none opacity-0 will-change-transform">
