@@ -2,22 +2,24 @@
 
 import React from 'react';
 
-export const InputGroup = ({ label, type = "text", required = true, placeholder = "" }: { label: string, type?: string, required?: boolean, placeholder?: string }) => (
+export const InputGroup = ({ label, type = "text", required = true, placeholder = "", name }: { label: string, type?: string, required?: boolean, placeholder?: string, name?: string }) => (
     <div className="flex flex-col gap-2">
         <label className="text-[#EFD9F7] text-xs font-bold uppercase tracking-wider">
             {required && '* '}{label}
         </label>
         <input
             type={type}
+            name={name}
+            required={required}
             placeholder={placeholder}
             className="w-full bg-transparent border border-[#EFD9F7]/20 p-4 text-[#EFD9F7] focus:border-[#C78D17] outline-none transition-colors rounded-sm"
         />
     </div>
 );
 
-export const SelectGroup = ({ label, options, required = true, placeholder = "Select an answer" }: { label: string, options: string[], required?: boolean, placeholder?: string }) => {
+export const SelectGroup = ({ label, options, required = true, placeholder = "Select an answer", defaultValue = "" }: { label: string, options: string[], required?: boolean, placeholder?: string, defaultValue?: string }) => {
     const [isOpen, setIsOpen] = React.useState(false);
-    const [selected, setSelected] = React.useState('');
+    const [selected, setSelected] = React.useState(defaultValue);
 
     return (
         <div className="flex flex-col gap-2 relative">

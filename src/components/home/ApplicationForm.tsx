@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { InputGroup, SelectGroup, TextAreaGroup, FileUpload } from '../FormComponents';
 import { countries } from '@/data/countries';
 
@@ -11,9 +12,27 @@ const ApplicationForm = () => {
     const [step, setStep] = useState(1);
     const [selectedTier, setSelectedTier] = useState(initialTier);
     const [consent, setConsent] = useState(false);
+    const [captchaVerified, setCaptchaVerified] = useState(false);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     const handleNext = () => setStep(prev => prev + 1);
     const handlePrev = () => setStep(prev => prev - 1);
+
+    const onCaptchaChange = (value: string | null) => {
+        setCaptchaVerified(!!value);
+    };
+
+    const handleSubmit = () => {
+        if (!captchaVerified) {
+            alert("Please verify you are not a robot");
+            return;
+        }
+        if (!consent) {
+            alert("Please agree to the consent form");
+            return;
+        }
+        console.log("Application Submitted");
+    };
 
     return (
         <section className="min-h-screen w-full bg-[#3D0066] text-[#EFD9F7] flex flex-col items-center p-6 md:p-24 relative">
@@ -295,9 +314,19 @@ const ApplicationForm = () => {
                                 Next Step
                             </button>
                         ) : (
-                            <button className="px-12 py-4 bg-[#C78D17] text-[#3D0066] font-semibold uppercase tracking-widest text-sm hover:bg-[#EFD9F7] transition-colors">
-                                Submit Application
-                            </button>
+                            <div className="flex flex-col gap-4">
+                                <div className="flex justify-center my-4">
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "YOUR_SITE_KEY"}
+                                        onChange={onCaptchaChange}
+                                        theme="dark"
+                                    />
+                                </div>
+                                <button onClick={handleSubmit} className="px-12 py-4 bg-[#C78D17] text-[#3D0066] font-semibold uppercase tracking-widest text-sm hover:bg-[#EFD9F7] transition-colors w-full md:w-auto self-end">
+                                    Submit Application
+                                </button>
+                            </div>
                         )}
                     </div>
 
