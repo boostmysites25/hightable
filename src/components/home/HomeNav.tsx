@@ -78,8 +78,8 @@ const HomeNav = () => {
 
                 {/* Top Left - Logo/Home */}
                 <div className="md:absolute top-6 left-6 md:top-12 md:left-12 pointer-events-auto z-60">
-                    <Link href="/" className="text-sm md:text-base tracking-[0.2em] hover:opacity-70 transition-opacity font-serif">
-                        HIGH TABLE
+                    <Link href="/" className="text-sm md:text-base tracking-[0.2em] hover:opacity-70 transition-opacity font-serif uppercase">
+                        The Silent Accord
                     </Link>
                 </div>
 

@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
                     <section>
                         <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">1. Introduction</h2>
                         <p className="mb-4">
-                            High Table ("we," "our," or "us") is dedicated to protecting the privacy and security of our members ("you"). This Privacy Policy outlines how we collect, use, and safeguard your personal information within our exclusive network. We operate in strict adherence to global privacy standards, ensuring your data is treated with the highest level of confidentiality suitable for a High Net Worth ecosystem.
+                            The Silent Accord ("we," "our," or "us") is dedicated to protecting the privacy and security of our members ("you"). This Privacy Policy outlines how we collect, use, and safeguard your personal information within our exclusive network. We operate in strict adherence to global privacy standards, ensuring your data is treated with the highest level of confidentiality suitable for a High Net Worth ecosystem.
                         </p>
                     </section>
 

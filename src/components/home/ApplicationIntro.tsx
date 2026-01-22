@@ -34,7 +34,7 @@ const Content = () => {
 
             <div className="max-w-5xl w-full relative z-10">
                 <div className="text-center mb-16">
-                    <h1 className="text-3xl md:text-5xl uppercase text-[#EFD9F7] mb-6">High Table Membership Application</h1>
+                    <h1 className="text-3xl md:text-5xl uppercase text-[#EFD9F7] mb-6">The Silent Accord Membership Application</h1>
                     <div className="w-24 h-0.5 bg-[#C78D17]/50 mx-auto" />
                 </div>
 
@@ -44,7 +44,7 @@ const Content = () => {
                         <ul className="space-y-4 text-sm md:text-base font-light text-[#EFD9F7]/80 leading-relaxed">
                             <li className="flex gap-3">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#C78D17] mt-2 shrink-0" />
-                                <span>I hereby apply for membership to The High Table. If accepted, I agree to be bound by the Sovereign Code of the territory.</span>
+                                <span>I hereby apply for membership to The The Silent Accord. If accepted, I agree to be bound by the Sovereign Code of the territory.</span>
                             </li>
                             <li className="flex gap-3">
                                 <span className="w-1.5 h-1.5 rounded-full bg-[#C78D17] mt-2 shrink-0" />

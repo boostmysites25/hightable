@@ -44,7 +44,7 @@ const ApplicationForm = () => {
                 {/* Header */}
                 <div className="mb-12 flex justify-between items-end border-b border-[#C78D17]/30 pb-6">
                     <div>
-                        <h1 className="text-3xl uppercase tracking-wide text-[#EFD9F7]">Membership Application - High Table</h1>
+                        <h1 className="text-3xl uppercase tracking-wide text-[#EFD9F7]">Membership Application - The Silent Accord</h1>
                     </div>
                     <div className="text-[#C78D17] text-sm font-semibold tracking-widest">
                         Step {step} of 3
@@ -93,7 +93,7 @@ const ApplicationForm = () => {
                                 <InputGroup label="Instagram Handle" required={false} />
 
                                 {/* 9. Membership Interest */}
-                                <TextAreaGroup label="Membership Interest" subtext="Why do you like to join the HighTable?" />
+                                <TextAreaGroup label="Membership Interest" subtext="Why do you like to join The Silent Accord?" />
                             </div>
                         </>
                     )}
@@ -183,7 +183,7 @@ const ApplicationForm = () => {
                                         <div>
                                             <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Elite Membership (AXIS)</h3>
                                             <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $1,500 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
-                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual access payment applicable upon acceptance.</p>
                                         </div>
                                     </div>
 
@@ -198,7 +198,7 @@ const ApplicationForm = () => {
                                         <div>
                                             <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Sovereign Membership (VAULT)</h3>
                                             <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $3,000 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
-                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual access payment applicable upon acceptance.</p>
                                         </div>
                                     </div>
 
@@ -213,7 +213,7 @@ const ApplicationForm = () => {
                                         <div>
                                             <h3 className="text-[#EFD9F7] text-sm font-bold uppercase underline decoration-[#C78D17] underline-offset-4 mb-2">Tycoon Membership (COTERIE)</h3>
                                             <p className="text-[#EFD9F7] text-xl mb-1">Registration Fee: $10,000 <span className="text-sm">(Excl. Tax)</span><span className="text-[#C78D17]">*</span></p>
-                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual Membership Fee applicable upon acceptance.</p>
+                                            <p className="text-[#EFD9F7]/60 text-xs italic">Annual access payment applicable upon acceptance.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@ const ApplicationForm = () => {
                                     <SelectGroup label="Country" options={countries.map(c => c.name)} />
 
                                     <p className="text-[#EFD9F7]/60 text-xs text-justify">
-                                        By providing your card information, you allow High Table to charge your card for the <span className="text-[#C78D17]">Non-Refundable Registration Fee (Excl. Tax)</span> upon submission/acceptance, and future payments in accordance with membership terms.
+                                        By providing your card information, you allow The Silent Accord to charge your card for the <span className="text-[#C78D17]">Non-Refundable Registration Fee (Excl. Tax)</span> upon submission/acceptance, and future payments in accordance with membership terms.
                                     </p>
                                 </div>
                             </div>
@@ -288,7 +288,7 @@ const ApplicationForm = () => {
                                             {consent && <span className="text-[#3D0066] text-sm font-bold">✓</span>}
                                         </div>
                                         <span className="text-[#EFD9F7] text-sm group-hover:text-[#C78D17] transition-colors">
-                                            I give my consent for High Table to process my application data. I agree to the <a href="/terms-of-service" target="_blank" className="underline hover:text-[#C78D17]">Terms of Service</a> and acknowledge the <a href="/privacy-policy" target="_blank" className="underline hover:text-[#C78D17]">Privacy Policy</a>.
+                                            I give my consent for The Silent Accord to process my application data. I agree to the <a href="/terms-of-service" target="_blank" className="underline hover:text-[#C78D17]">Terms of Service</a> and acknowledge the <a href="/privacy-policy" target="_blank" className="underline hover:text-[#C78D17]">Privacy Policy</a>.
                                         </span>
                                     </label>
                                 </div>

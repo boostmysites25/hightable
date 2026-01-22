@@ -23,7 +23,7 @@ const HomeAbout = () => {
                     </h2>
                     <p className="text-[#EFD9F7]/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                         Beyond the noise of the commons lies a territory of silence and significance.
-                        High Table is not merely a network; it is an architecture of trust, curated for those who command the world.
+                        The Silent Accord is not merely a network; it is an architecture of trust, curated for those who command the world.
                     </p>
                 </div>
             </div>

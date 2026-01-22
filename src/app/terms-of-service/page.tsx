@@ -16,7 +16,7 @@ export default function TermsOfService() {
                     <section>
                         <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">1. Acceptance of Terms</h2>
                         <p className="mb-4">
-                            By accessing or using the High Table platform and services, you agree to be bound by these Terms of Service and our "Sovereign Code" of conduct. If you do not agree to these terms, you may not access the services.
+                            By accessing or using the The Silent Accord platform and services, you agree to be bound by these Terms of Service and our "Sovereign Code" of conduct. If you do not agree to these terms, you may not access the services.
                         </p>
                     </section>
 
@@ -46,14 +46,14 @@ export default function TermsOfService() {
                     <section>
                         <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">4. Termination</h2>
                         <p className="mb-4">
-                            High Table reserves the right to terminate or suspend your membership immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms or the Sovereign Code.
+                            The Silent Accord reserves the right to terminate or suspend your membership immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms or the Sovereign Code.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">5. Limitation of Liability</h2>
                         <p className="mb-4">
-                            In no event shall High Table, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+                            In no event shall The Silent Accord, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
                         </p>
                     </section>
 

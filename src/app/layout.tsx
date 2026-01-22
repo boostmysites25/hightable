@@ -27,7 +27,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "High Table | The Exclusive UHNI Ecosystem",
+  title: "The Silent Accord | The Exclusive UHNI Ecosystem",
   description: "A private ecosystem offering deal rooms, strategic alliances, and elite networking for Ultra-High-Net-Worth Individuals.",
   icons: {
     icon: "",
@@ -45,9 +45,9 @@ export default function RootLayout({
         className={`${montserrat.variable} antialiased bg-[#201B35] text-white overflow-x-hidden max-w-[100vw]`}
       >
         <div className="overflow-x-hidden w-full">
-          
+
           {children}
-         
+
         </div>
       </body>
     </html>

@@ -15,7 +15,7 @@ const tiers = [
         price: '$5,000',
         period: 'Annual Subscription (Excl. Tax)',
         benefits: [
-            'Global Access to High Table properties',
+            'Global Access to The Silent Accord properties',
             'Quarterly industry networking mixers',
             'Priority reservations at partner venues',
             'Digital "Deal Room" access (View Only)'
@@ -31,7 +31,7 @@ const tiers = [
         price: '$10,000',
         period: 'Annual Subscription (Excl. Tax)',
         benefits: [
-            'Global Access to High Table properties',
+            'Global Access to The Silent Accord properties',
             'Full "Deal Room" participation',
             'Private boardroom booking privileges',
             'Concierge liaison for travel & lifestyle'

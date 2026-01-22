@@ -85,8 +85,8 @@ const HomeContact = () => {
 
                     <div className="pt-6 text-center border-t border-[#EFD9F7]/10 mt-8">
                         <p className="text-[#EFD9F7]/50 text-xs tracking-widest mb-2">DIRECT INQUIRIES</p>
-                        <a href="mailto:office@hightable.com" className="text-[#EFD9F7] hover:text-[#C78D17] transition-colors text-sm tracking-wide">
-                            office@hightable.com
+                        <a href="mailto:office@thesilentaccord.com" className="text-[#EFD9F7] hover:text-[#C78D17] transition-colors text-sm tracking-wide">
+                            office@thesilentaccord.com
                         </a>
                     </div>
                 </form>
