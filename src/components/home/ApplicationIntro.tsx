@@ -5,18 +5,18 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 const appTiers: Record<string, { title: string; dues: string; initiation: string }> = {
-    'tier1': {
-        title: 'Elite Membership (AXIS)',
+    'axis': {
+        title: 'AXIS Membership',
         dues: 'Annual Dues: $5,000 (Excl. Tax)',
         initiation: 'Registration Fee: $1,500 (One-time, Excl. Tax)'
     },
-    'tier2': {
-        title: 'Sovereign Membership (VAULT)',
+    'vault': {
+        title: 'VAULT Membership',
         dues: 'Annual Dues: $10,000 (Excl. Tax)',
         initiation: 'Registration Fee: $3,000 (One-time, Excl. Tax)'
     },
-    'tier3': {
-        title: 'Tycoon Membership (COTERIE)',
+    'coterie': {
+        title: 'COTERIE Membership',
         dues: 'Annual Dues: $30,000 (Excl. Tax)',
         initiation: 'Registration Fee: $10,000 (One-time, Excl. Tax)'
     }
@@ -80,7 +80,7 @@ const Content = () => {
                         {/* {tierId === 'tier1' && <p>* Applicants for Elite Membership must possess a Net Worth between $250k - $600k.</p>}
                         {tierId === 'tier2' && <p>* Applicants for Sovereign Membership must possess a Net Worth between $600k - $12M.</p>}
                         {tierId === 'tier3' && <p>* Applicants for Tycoon Membership must demonstrate a Net Worth of $12M+.</p>} */}
-                        <p>* Your billing details will not be charged until your application has been formally accepted by the Committee.</p>
+                        <p>* Your billing details will not be charged until your application has been formally accepted by the Board.</p>
                     </div>
 
                     <div className="pt-8 flex justify-center">

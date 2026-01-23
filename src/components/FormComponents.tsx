@@ -17,17 +17,23 @@ export const InputGroup = ({ label, type = "text", required = true, placeholder 
     </div>
 );
 
-export const SelectGroup = ({ label, options, required = true, placeholder = "Select an answer", defaultValue = "" }: { label: string, options: string[], required?: boolean, placeholder?: string, defaultValue?: string }) => {
+export const SelectGroup = ({ label, options, required = true, placeholder = "Select an answer", defaultValue = "", variant = 'box' }: { label: string, options: string[], required?: boolean, placeholder?: string, defaultValue?: string, variant?: 'box' | 'underline' }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [selected, setSelected] = React.useState(defaultValue);
 
+    const baseStyles = "w-full bg-transparent text-[#EFD9F7] cursor-pointer flex justify-between items-center transition-all group";
+    const boxStyles = `border ${isOpen ? 'border-[#C78D17]' : 'border-[#EFD9F7]/20'} p-4 rounded-sm`;
+    const underlineStyles = `border-b ${isOpen ? 'border-[#C78D17]' : 'border-[#EFD9F7]/20'} py-3 text-sm`;
+
     return (
-        <div className="flex flex-col gap-2 relative">
-            <label className="text-[#EFD9F7] text-xs font-bold uppercase tracking-wider">
-                {required && '* '}{label}
-            </label>
+        <div className="flex flex-col gap-2 relative h-full">
+            {label && (
+                <label className="text-[#EFD9F7] text-xs font-bold uppercase tracking-wider">
+                    {required && '* '}{label}
+                </label>
+            )}
             <div
-                className={`w-full bg-transparent border ${isOpen ? 'border-[#C78D17]' : 'border-[#EFD9F7]/20'} p-4 text-[#EFD9F7] cursor-pointer rounded-sm flex justify-between items-center transition-all group`}
+                className={`${baseStyles} ${variant === 'box' ? boxStyles : underlineStyles}`}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span className={`block truncate mr-2 ${selected ? 'text-[#EFD9F7]' : 'text-[#EFD9F7]/50'}`}>

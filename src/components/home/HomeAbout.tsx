@@ -5,7 +5,7 @@ import Image from 'next/image';
 const HomeAbout = () => {
     return (
         <section id="about" className="h-screen w-full relative snap-start flex items-center justify-center overflow-hidden bg-[#3D0066]">
-            <div className="absolute inset-0 opacity-100 brightness-75">
+            <div className="absolute inset-0 opacity-100 brightness-[0.70]">
                 <Image
                     src="/assets/feature-1.jpg"
                     alt="The Sanctuary"

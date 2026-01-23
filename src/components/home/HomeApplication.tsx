@@ -7,8 +7,8 @@ import gsap from 'gsap';
 
 const tiers = [
     {
-        id: 'tier1',
-        title: 'Elite',
+        id: 'axis',
+        title: 'AXIS',
         subtitle: 'AXIS Membership',
         description: 'For emerging leaders with high-growth trajectories.',
         netWorth: 'Target Net Worth: $250k – $600k',
@@ -23,8 +23,8 @@ const tiers = [
         image: '/assets/about-interior.png'
     },
     {
-        id: 'tier2',
-        title: 'Sovereign',
+        id: 'vault',
+        title: 'VAULT',
         subtitle: 'VAULT Membership',
         description: 'The standard for established visionaries and capital allocators.',
         netWorth: 'Target Net Worth: $600k – $12M',
@@ -39,8 +39,8 @@ const tiers = [
         image: '/assets/feature-2.png'
     },
     {
-        id: 'tier3',
-        title: 'Tycoon',
+        id: 'coterie',
+        title: 'COTERIE',
         subtitle: 'COTERIE Membership',
         description: 'For industry titans who shape markets and build empires.',
         netWorth: 'Target Net Worth: $12M+',
@@ -89,7 +89,7 @@ const HomeApplication = () => {
                     <div
                         key={tier.id}
                         onClick={() => handleTierChange(tier)}
-                        className={`relative flex-1 flex items-center justify-center cursor-pointer group overflow-hidden border-b border-[#C78D17]/10 last:border-b-0 transition-all duration-500`}
+                        className={`relative flex-1 flex items-center justify-center cursor-pointer group overflow-hidden border-b border-[#C78D17]/10 last:border-b-0 transition-all duration-500 min-h-[200px]`}
                     >
                         {/* Background Texture (Preserved) */}
                         <div className={`absolute inset-0 transition-opacity duration-500 ${activeTier.id === tier.id ? 'opacity-40' : 'opacity-20 group-hover:opacity-30'}`}>

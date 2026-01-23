@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { InputGroup } from '../FormComponents';
+// import { InputGroup } from '../FormComponents';
 
 const HomeMembers = () => {
     const [captchaVerified, setCaptchaVerified] = React.useState(false);
@@ -25,6 +25,11 @@ const HomeMembers = () => {
         setCaptchaVerified(!!value);
     };
 
+    // Style Constants
+    const LABEL_CLASS = "text-[#EFD9F7] text-xs font-bold uppercase tracking-wider";
+    const INPUT_CLASS = "w-full bg-transparent border border-[#EFD9F7]/20 p-4 text-[#EFD9F7] focus:border-[#C78D17] outline-none transition-colors rounded-sm";
+    const GROUP_CLASS = "flex flex-col gap-2";
+
     return (
         <section id="members" className="min-h-screen md:h-screen w-full relative">
             <div className="snap-start w-full min-h-screen md:h-full relative flex items-center justify-center bg-[#3D0066] border-r border-[#C78D17]/10">
@@ -39,8 +44,16 @@ const HomeMembers = () => {
                 <div className="relative z-10 text-center max-w-md w-full px-6">
                     <h3 className="text-3xl md:text-4xl uppercase text-[#EFD9F7] mb-8">Members</h3>
                     <form onSubmit={handleLogin} className="space-y-6 text-left p-8 border border-[#EFD9F7]/10 backdrop-blur-sm">
-                        <InputGroup label="Email" type="email" name="email" placeholder="Enter your email" required />
-                        <InputGroup label="Password" type="password" name="password" placeholder="Enter your password" required />
+
+                        <div className={GROUP_CLASS}>
+                            <label className={LABEL_CLASS}>* Email</label>
+                            <input type="email" placeholder="Enter your email" className={INPUT_CLASS} required />
+                        </div>
+
+                        <div className={GROUP_CLASS}>
+                            <label className={LABEL_CLASS}>* Password</label>
+                            <input type="password" placeholder="Enter your password" className={INPUT_CLASS} required />
+                        </div>
 
                         <div className="flex justify-center my-4">
                             <ReCAPTCHA

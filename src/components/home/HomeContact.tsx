@@ -33,7 +33,8 @@ const HomeContact = () => {
                             type="text"
                             name="name"
                             required
-                            placeholder="FULL NAME"
+                            autoComplete="name"
+                            placeholder="FULL NAME *"
                             className="w-full bg-transparent border-b border-[#EFD9F7]/20 text-[#EFD9F7] placeholder-[#EFD9F7]/40 py-3 text-sm focus:outline-none focus:border-[#C78D17] transition-colors"
                         />
                     </div>
@@ -43,17 +44,20 @@ const HomeContact = () => {
                             type="email"
                             name="email"
                             required
-                            placeholder="EMAIL"
+                            autoComplete="email"
+                            placeholder="EMAIL *"
                             className="bg-transparent border-b border-[#EFD9F7]/20 text-[#EFD9F7] placeholder-[#EFD9F7]/40 py-3 text-sm focus:outline-none focus:border-[#C78D17] transition-colors col-span-2 md:col-span-1"
                         />
                         <div className="col-span-2 md:col-span-1 grid grid-cols-[110px_1fr] gap-2">
-                            <div className="border-b border-[#EFD9F7]/20">
-                                <SelectGroup label="" options={countries.map(c => `${c.code}`)} placeholder="Code" required={false} defaultValue="+91" />
+                            <div className="">
+                                <SelectGroup label="" options={countries.map(c => `${c.code}`)} placeholder="Code" required={false} defaultValue="+1" variant="underline" />
                             </div>
                             <input
                                 type="tel"
                                 name="phone"
-                                placeholder="PHONE"
+                                required
+                                autoComplete="tel"
+                                placeholder="PHONE *"
                                 className="w-full bg-transparent border-b border-[#EFD9F7]/20 text-[#EFD9F7] placeholder-[#EFD9F7]/40 py-3 text-sm focus:outline-none focus:border-[#C78D17] transition-colors h-full"
                             />
                         </div>
@@ -64,7 +68,7 @@ const HomeContact = () => {
                             name="message"
                             required
                             rows={3}
-                            placeholder="MESSAGE"
+                            placeholder="MESSAGE *"
                             className="w-full bg-transparent border-b border-[#EFD9F7]/20 text-[#EFD9F7] placeholder-[#EFD9F7]/40 py-3 text-sm focus:outline-none focus:border-[#C78D17] transition-colors resize-none"
                         />
                     </div>

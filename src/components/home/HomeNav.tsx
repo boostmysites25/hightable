@@ -115,7 +115,7 @@ const HomeNav = () => {
                             href={item.href}
                             ref={addToRefs}
                             onClick={() => setIsMenuOpen(false)}
-                            className="group relative text-2xl md:text-6xl uppercase text-[#EFD9F7] hover:text-[#C78D17] transition-colors tracking-widest opacity-0"
+                            className="group relative text-2xl md:text-4xl uppercase text-[#EFD9F7] hover:text-[#C78D17] transition-colors tracking-widest opacity-0"
                         >
                             <span className="relative z-10">{item.name}</span>
                             <span className="absolute left-0 -bottom-2 w-full h-0.5 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center" />
