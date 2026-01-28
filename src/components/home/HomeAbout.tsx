@@ -18,12 +18,12 @@ const HomeAbout = () => {
             <div className="relative z-10 container mx-auto px-6 md:px-24">
                 <div className="max-w-4xl">
                     <h2 className="text-4xl md:text-6xl uppercase text-[#EFD9F7] mb-8 leading-tight">
-                        A sanctuary for the<br />
-                        <span className="text-[#C78D17]">sovereign few.</span>
+                        Reserved for the <br />
+                        <span className="text-[#C78D17]">Few.</span>
                     </h2>
                     <p className="text-[#EFD9F7]/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
-                        Beyond the noise of the commons lies a territory of silence and significance.
-                        The Silent Accord is not merely a network; it is an architecture of trust, curated for those who command the world.
+                        Beyond the commons lies an exclusive domain of discretion. <br />
+                        The Silent Accord exists to preserve trust among those who already govern outcomes.
                     </p>
                 </div>
             </div>

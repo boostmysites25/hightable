@@ -10,9 +10,6 @@ export default function HomePage() {
             <HomeNav />
             <main className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth no-scrollbar">
                 <HomeHero />
-                {/* <HomeAbout />
-                <HomeApplication />
-                <HomeMembers /> */}
             </main>
         </div>
     );

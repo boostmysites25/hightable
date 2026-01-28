@@ -106,8 +106,8 @@ const HomeNav = () => {
                     {[
                         { name: 'Home', href: '/' },
                         { name: 'About', href: '/about' },
-                        { name: 'Application', href: '/application' },
-                        { name: 'Members', href: '/members' },
+                        { name: 'Access', href: '/application' },
+                        { name: 'The Circle', href: '/members' },
                         { name: 'Contact', href: '/contact' }
                     ].map((item, _index) => (
                         <Link

@@ -9,49 +9,52 @@ const tiers = [
     {
         id: 'axis',
         title: 'AXIS',
-        subtitle: 'AXIS Membership',
-        description: 'For emerging leaders with high-growth trajectories.',
-        netWorth: 'Target Net Worth: $250k – $600k',
-        price: '$5,000',
-        period: 'Annual Subscription (Excl. Tax)',
+        subtitle: 'AXIS · Tier I Access',
+        description: 'For individuals entering positions of sustained influence.',
+        note: 'Extended upon private review',
+        price: 'USD 5,000',
+        period: 'Annual Consideration',
         benefits: [
-            'Global Access to The Silent Accord properties',
-            'Quarterly industry networking mixers',
-            'Priority reservations at partner venues',
-            'Digital "Deal Room" access (View Only)'
+            'Limited access to select Silent Accord environments',
+            'Invitation to private convenings, extended selectively',
+            'Priority consideration at aligned locations',
+            'View-only access to curated private listings'
         ],
+        cta: 'Request Consideration',
         image: '/assets/about-interior.png'
     },
     {
         id: 'vault',
         title: 'VAULT',
-        subtitle: 'VAULT Membership',
-        description: 'The standard for established visionaries and capital allocators.',
-        netWorth: 'Target Net Worth: $600k – $12M',
-        price: '$10,000',
-        period: 'Annual Subscription (Excl. Tax)',
+        subtitle: 'VAULT · Tier II Access',
+        description: 'For distinguished leaders with established influence and capital responsibility.',
+        note: 'Extended selectively',
+        price: 'USD 10,000',
+        period: 'Annual Consideration',
         benefits: [
-            'Global Access to The Silent Accord properties',
-            'Full "Deal Room" participation',
-            'Private boardroom booking privileges',
-            'Concierge liaison for travel & lifestyle'
+            'Broader access to Silent Accord environments',
+            'Participatory access to private listings and discussions',
+            'Priority access to private meeting environments',
+            'Dedicated liaison for logistical coordination'
         ],
+        cta: 'Proceed to Review',
         image: '/assets/feature-2.png'
     },
     {
         id: 'coterie',
         title: 'COTERIE',
-        subtitle: 'COTERIE Membership',
-        description: 'For industry titans who shape markets and build empires.',
-        netWorth: 'Target Net Worth: $12M+',
-        price: '$30,000',
-        period: 'Annual Subscription (Excl. Tax)',
+        subtitle: 'COTERIE · Tier III Access',
+        description: 'For a limited number of principals, subject to specific conditions.',
+        note: 'Extended by private invitation',
+        price: 'USD 30,000',
+        period: 'Annual Consideration',
         benefits: [
-            'Global Access with +1 Guest privileges',
-            'Exclusive "Tycoon" mentorship circles',
-            'Direct access to Founding Members',
-            'Lifetime status options available'
+            'Unrestricted access to Accord environments, by discretion',
+            'Closed-door peer councils',
+            'Direct alignment with founding principals',
+            'Extended status considerations may be reviewed privately'
         ],
+        cta: 'Request Access',
         image: '/assets/feature-3.png'
     }
 ];
@@ -121,7 +124,6 @@ const HomeApplication = () => {
             <div className="w-full md:w-2/5 relative bg-[#3D0066] flex flex-col justify-center p-8 md:p-16">
                 <div ref={detailsRef} className="relative z-10 w-full opacity-100">
                     <h4 className="text-[#C78D17] text-xs md:text-sm uppercase tracking-[0.2em] mb-2">{activeTier.subtitle}</h4>
-                    {/* <p className="text-[#EFD9F7]/50 text-xs tracking-wider mb-6">{activeTier.netWorth}</p> */}
 
                     <p className="text-[#EFD9F7]/80 text-sm md:text-base mb-8 leading-relaxed font-light">
                         {activeTier.description}
@@ -132,6 +134,7 @@ const HomeApplication = () => {
                             <p className="text-2xl md:text-4xl text-[#EFD9F7]">{activeTier.price}</p>
                         </div>
                         <p className="text-[#EFD9F7]/50 text-xs tracking-wide">{activeTier.period}</p>
+                        <p className="text-[#C78D17]/80 text-xs italic mt-2">{activeTier.note}</p>
                     </div>
 
                     <ul className="space-y-4 mb-12">
@@ -145,10 +148,22 @@ const HomeApplication = () => {
 
                     <Link href={`/application/intro?tier=${activeTier.id}`} className="group relative w-full py-5 block text-center bg-transparent border border-[#EFD9F7]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer">
                         <span className="relative z-10 text-[#EFD9F7] text-xs md:text-sm tracking-[0.2em] uppercase group-hover:text-[#3D0066] transition-colors font-semibold">
-                            Start Your Journey
+                            {activeTier.cta}
                         </span>
                         <div className="absolute inset-0 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                     </Link>
+
+                    {/* GLOBAL DISCLAIMER */}
+                    <div className="mt-8 pt-8 border-t border-[#EFD9F7]/10 text-center">
+                        <p className="text-[#EFD9F7]/40 text-[10px] uppercase tracking-widest leading-relaxed">
+                            The Silent Accord does not offer open access.
+                            <br />
+                            All access tiers function under private review and may be modified or withdrawn without notice.
+                        </p>
+                        <Link href="/application/form" className="inline-block mt-4 text-[#C78D17] text-[10px] uppercase tracking-widest hover:text-[#EFD9F7] transition-colors border-b border-transparent hover:border-[#EFD9F7]">
+                            Request Access
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>

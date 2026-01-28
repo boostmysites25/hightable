@@ -47,8 +47,7 @@ const HomeHero = () => {
                     A World For The Few
                 </h1>
                 <p ref={subtitleRef} className="my-4 text-[#C78D17] tracking-[0.3em] text-xs md:text-sm uppercase opacity-0 will-change-transform font-light">
-                    {/* Territory */}
-                    The Elite Club
+                    The Inner Circle
                 </p>
                 <Link href='/application/form' ref={buttonRef} className="group relative px-12 py-4 bg-transparent border border-[#C78D17]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer opacity-0 will-change-transform mt-8">
                     <span className="relative z-10 text-[#EFD9F7] text-sm tracking-widest uppercase group-hover:text-[#3D0066] transition-colors cursor-pointer">

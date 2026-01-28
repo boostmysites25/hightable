@@ -29,9 +29,6 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "The Silent Accord | The Exclusive UHNI Ecosystem",
   description: "A private ecosystem offering deal rooms, strategic alliances, and elite networking for Ultra-High-Net-Worth Individuals.",
-  icons: {
-    icon: "",
-  },
 };
 
 export default function RootLayout({
