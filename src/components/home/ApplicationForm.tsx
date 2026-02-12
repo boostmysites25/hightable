@@ -185,7 +185,7 @@ const ApplicationForm = () => {
                         <h1 className="text-3xl uppercase tracking-wide text-[#EFD9F7]">ACCESS — THE SILENT ACCORD</h1>
                     </div>
                     <div className="text-[#C78D17] text-sm font-semibold tracking-widest">
-                        Step {step} of 3
+                        {step === 1 ? "Initial Review" : step === 2 ? "Verification" : "Final Review"}
                     </div>
                 </div>
 
@@ -197,7 +197,7 @@ const ApplicationForm = () => {
                         <>
                             {/* Priority Information */}
                             <div className="space-y-8">
-                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Membership Application</h2>
+                                {/* <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Membership Application</h2> */}
 
                                 {/* Name Fields */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -290,6 +290,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.primaryDomain ? 'border-red-500' : ''} ${shakeFields.includes('primaryDomain') ? 'animate-shake' : ''}`}
                                             required
                                         />
+                                        <p className="text-[#EFD9F7]/40 text-xs">Primary internet domain</p>
                                         {errors.primaryDomain && <p className={ERROR_CLASS}>{errors.primaryDomain}</p>}
                                     </div>
                                     <div className={GROUP_CLASS}>
@@ -317,6 +318,7 @@ const ApplicationForm = () => {
                                             className={shakeFields.includes('industry') ? 'animate-shake' : ''}
                                             required
                                         />
+                                        <p className="text-[#EFD9F7]/40 text-xs">Sector of professional focus</p>
                                         {errors.industry && <p className={ERROR_CLASS}>{errors.industry}</p>}
                                         {formData.industry === 'Other' && (
                                             <div className="mt-4 animate-fade-in">
@@ -351,7 +353,7 @@ const ApplicationForm = () => {
                                         />
                                         {errors.country && <p className={ERROR_CLASS}>{errors.country}</p>}
                                     </div>
-                                    <div className={GROUP_CLASS}>
+                                    {/* <div className={GROUP_CLASS}>
                                         <label className={LABEL_CLASS}>* Primary Postal Code</label>
                                         <input
                                             type="text"
@@ -362,7 +364,7 @@ const ApplicationForm = () => {
                                             required
                                         />
                                         {errors.primaryPostalCode && <p className={ERROR_CLASS}>{errors.primaryPostalCode}</p>}
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Text Areas */}
@@ -402,7 +404,7 @@ const ApplicationForm = () => {
                         <>
                             {/* Verification */}
                             <div className="space-y-8">
-                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Verification</h2>
+                                {/* <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Verification</h2> */}
 
                                 {/* Contact Info */}
                                 <div className="grid grid-cols-1 md:grid-cols-[2fr_120px_1fr] gap-8">
@@ -449,7 +451,7 @@ const ApplicationForm = () => {
 
                                 {/* Personal Demographics */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className={GROUP_CLASS}>
+                                    {/* <div className={GROUP_CLASS}>
                                         <label className={LABEL_CLASS}>* Date of Birth</label>
                                         <input
                                             type="date"
@@ -462,7 +464,7 @@ const ApplicationForm = () => {
                                         />
                                         <p className="text-[#EFD9F7]/40 text-xs">DD . MM . YYYY (Pull out calendar)</p>
                                         {errors.dob && <p className={ERROR_CLASS}>{errors.dob}</p>}
-                                    </div>
+                                    </div> */}
                                     <div className={GROUP_CLASS}>
                                         <label className={LABEL_CLASS}>* Gender</label>
                                         <CustomDropdown
@@ -479,7 +481,7 @@ const ApplicationForm = () => {
                                 </div>
 
                                 {/* Detailed Address */}
-                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
+                                {/* <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
                                     <h2 className="text-[#EFD9F7]/80 text-sm uppercase tracking-widest">Primary Residence Details</h2>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -544,7 +546,7 @@ const ApplicationForm = () => {
                                             {errors.state && <p className={ERROR_CLASS}>{errors.state}</p>}
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Administrative Contact */}
                                 <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
@@ -800,7 +802,7 @@ const ApplicationForm = () => {
                         <div className="flex justify-between items-center w-full">
                             {step > 1 ? (
                                 <button onClick={handlePrev} className="text-[#EFD9F7]/60 hover:text-[#C78D17] uppercase tracking-widest text-sm transition-colors">
-                                    Back
+                                    Return
                                 </button>
                             ) : (
                                 <div />
@@ -811,7 +813,7 @@ const ApplicationForm = () => {
                                     onClick={handleNext}
                                     className="px-12 py-4 bg-[#C78D17] text-[#3D0066] font-semibold uppercase tracking-widest text-sm hover:bg-[#EFD9F7] transition-colors"
                                 >
-                                    Next Step
+                                    Continue Review
                                 </button>
                             ) : (
                                 <div className="flex flex-col gap-4 items-end">

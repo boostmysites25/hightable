@@ -147,6 +147,7 @@ const HomeApplication = () => {
                     </ul>
 
                     <Link href={`/application/intro?tier=${activeTier.id}`} className="group relative w-full py-5 block text-center bg-transparent border border-[#EFD9F7]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer">
+                    {/* <Link href={`/application/intro?tier=${activeTier.id}`} className="group relative w-full py-5 block text-center bg-transparent border border-[#EFD9F7]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer"> */}
                         <span className="relative z-10 text-[#EFD9F7] text-xs md:text-sm tracking-[0.2em] uppercase group-hover:text-[#3D0066] transition-colors font-semibold">
                             {activeTier.cta}
                         </span>
@@ -160,9 +161,9 @@ const HomeApplication = () => {
                             <br />
                             All access tiers function under private review and may be modified or withdrawn without notice.
                         </p>
-                        <Link href="/application/form" className="inline-block mt-4 text-[#C78D17] text-[10px] uppercase tracking-widest hover:text-[#EFD9F7] transition-colors border-b border-transparent hover:border-[#EFD9F7]">
+                        {/* <Link href="/application/form" className="inline-block mt-4 text-[#C78D17] text-[10px] uppercase tracking-widest hover:text-[#EFD9F7] transition-colors border-b border-transparent hover:border-[#EFD9F7]">
                             Request Access
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>
