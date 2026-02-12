@@ -53,14 +53,14 @@ const HomeMembers = () => {
     };
 
     // Shared Styles
-    const LABEL_CLASS = "text-[#EFD9F7]/60 text-[12px] uppercase tracking-widest font-semibold mb-2 block";
-    const INPUT_CLASS = "w-full bg-[#EFD9F7]/5 border border-[#EFD9F7]/10 p-4 text-[#EFD9F7] placeholder-[#EFD9F7]/50 focus:border-[#C78D17]/50 outline-none transition-colors rounded-sm text-sm";
+    const LABEL_CLASS = "text-[var(--foreground)]/60 text-[12px] uppercase tracking-widest font-semibold mb-2 block";
+    const INPUT_CLASS = "w-full bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 p-4 text-[var(--foreground)] placeholder-[var(--foreground)]/50 focus:border-[var(--gold)]/50 outline-none transition-colors rounded-sm text-sm";
     const GROUP_CLASS = "flex flex-col mb-6";
-    const BUTTON_CLASS = "w-full bg-[#C78D17] text-[#3D0066] font-bold uppercase tracking-widest py-4 hover:bg-[#EFD9F7] transition-colors text-sm";
+    const BUTTON_CLASS = "w-full bg-[var(--gold)] text-[var(--background)] font-bold uppercase tracking-widest py-4 hover:bg-[var(--foreground)] transition-colors text-sm";
 
     return (
         <section id="members" className="min-h-screen md:h-screen w-full relative">
-            <div className="snap-start w-full min-h-screen md:h-full relative flex items-center justify-center bg-[#3D0066] brightness-90 border-r border-[#C78D17]/10">
+            <div className="snap-start w-full min-h-screen md:h-full relative flex items-center justify-center bg-[var(--background)] brightness-90 border-r border-[var(--gold)]/10">
                 <div className="absolute inset-0 opacity-15">
                     <Image
                         src="/assets/feature-3.png"
@@ -75,7 +75,7 @@ const HomeMembers = () => {
                     {/* VIEW: PRIVATE ACCESS */}
                     {view === 'ACCESS' && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-                            <h3 className="text-2xl uppercase text-[#f1f1f1] tracking-widest mb-12">Private Access</h3>
+                            <h3 className="text-2xl uppercase text-[var(--foreground)] tracking-widest mb-12">Private Access</h3>
 
                             <form onSubmit={handleAccess} className="text-left">
                                 <div className={GROUP_CLASS}>
@@ -110,7 +110,7 @@ const HomeMembers = () => {
                             </form>
 
                             <div className="mt-12 space-y-8">
-                                <p className="text-[#EFD9F7]/70 text-sm tracking-widest leading-relaxed">
+                                <p className="text-[var(--foreground)]/70 text-sm tracking-widest leading-relaxed">
                                     Access is restricted to authorized participants.
                                     <br />
                                     All activity is monitored discreetly.
@@ -118,7 +118,7 @@ const HomeMembers = () => {
 
                                 <button
                                     onClick={() => { setView('ASSISTANCE'); setError(''); }}
-                                    className="text-[#EFD9F7]/50 hover:text-[#C78D17] text-[12px] uppercase tracking-widest transition-colors border-b border-[#EFD9F7]/50 hover:border-[#C78D17] pb-0.5 cursor-pointer"
+                                    className="text-[var(--foreground)]/50 hover:text-[var(--gold)] text-[12px] uppercase tracking-widest transition-colors border-b border-[var(--foreground)]/50 hover:border-[var(--gold)] pb-0.5 cursor-pointer"
                                 >
                                     Access Assistance
                                 </button>
@@ -129,8 +129,8 @@ const HomeMembers = () => {
                     {/* VIEW: ACCESS ASSISTANCE */}
                     {view === 'ASSISTANCE' && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-                            <h3 className="text-xl uppercase text-[#EFD9F7] tracking-widest mb-4">Access Assistance</h3>
-                            <p className="text-[#EFD9F7]/40 text-sm mb-12 font-light">
+                            <h3 className="text-xl uppercase text-[var(--foreground)] tracking-widest mb-4">Access Assistance</h3>
+                            <p className="text-[var(--foreground)]/40 text-sm mb-12 font-light">
                                 This process is available only to registered participants.
                             </p>
 
@@ -157,12 +157,12 @@ const HomeMembers = () => {
                             <div className="mt-12">
                                 <button
                                     onClick={() => { setView('ACCESS'); setError(''); }}
-                                    className="text-[#EFD9F7]/60 hover:text-[#EFD9F7] text-sm uppercase tracking-wide mb-8 transition-colors cursor-pointer"
+                                    className="text-[var(--foreground)]/60 hover:text-[var(--foreground)] text-sm uppercase tracking-wide mb-8 transition-colors cursor-pointer"
                                 >
                                     Return to Access
                                 </button>
 
-                                <p className="text-[#EFD9F7]/50 text-[12px] uppercase tracking-widest">
+                                <p className="text-[var(--foreground)]/50 text-[12px] uppercase tracking-widest">
                                     Access credentials are not issued or reset automatically.
                                 </p>
                             </div>
@@ -172,11 +172,11 @@ const HomeMembers = () => {
                     {/* VIEW: CONFIRMATION */}
                     {view === 'CONFIRMATION' && (
                         <div className="animate-in fade-in zoom-in-95 duration-700 py-12">
-                            <div className="w-12 h-12 border border-[#C78D17] rounded-full flex items-center justify-center mx-auto mb-8 text-[#C78D17]">
+                            <div className="w-12 h-12 border border-[var(--gold)] rounded-full flex items-center justify-center mx-auto mb-8 text-[var(--gold)]">
                                 ✓
                             </div>
-                            <h3 className="text-lg uppercase text-[#EFD9F7] tracking-widest mb-6">Request Received</h3>
-                            <p className="text-[#EFD9F7]/60 text-sm leading-relaxed mb-12">
+                            <h3 className="text-lg uppercase text-[var(--foreground)] tracking-widest mb-6">Request Received</h3>
+                            <p className="text-[var(--foreground)]/60 text-sm leading-relaxed mb-12">
                                 Your request has been received.
                                 <br />
                                 If appropriate, further instructions will be issued privately.
@@ -184,7 +184,7 @@ const HomeMembers = () => {
 
                             <button
                                 onClick={() => { setView('ACCESS'); setEmail(''); setAccessKey(''); }}
-                                className="text-[#C78D17] hover:text-[#EFD9F7] text-sm uppercase tracking-widest transition-colors"
+                                className="text-[var(--gold)] hover:text-[var(--foreground)] text-sm uppercase tracking-widest transition-colors"
                             >
                                 Return
                             </button>

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
+import Sparkles from '../ui/Sparkles';
 
 const HomeHero = () => {
     const titleRef = useRef(null);
@@ -29,31 +30,31 @@ const HomeHero = () => {
     }, []);
 
     return (
-        <section className="h-screen w-full relative snap-start flex items-center justify-center overflow-hidden bg-black">
+        <section className="h-screen w-full relative snap-start flex items-center justify-center overflow-hidden bg-[var(--background)]">
             <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-60"
+                className="absolute inset-0 w-full h-full object-cover brightness-60"
             >
                 <source src="/assets/background-video2.mp4" type="video/mp4" />
             </video>
-            {/* <div className="absolute inset-0 bg-[#3D0066]/40" /> */}
 
-            <div className="relative z-10 text-center mix-blend-plus-lighter flex flex-col items-center">
-                <h1 ref={titleRef} className="text-[12vw] md:text-[5vw] uppercase text-[#EFD9F7] leading-none opacity-0 will-change-transform">
+            <Sparkles count={40} minSize={10} maxSize={15} className="z-10 opacity-70" />
+            <div className="relative z-20 text-center flex flex-col items-center">
+                <h1 ref={titleRef} className="text-[10vw] md:text-[5vw] uppercase text-[var(--foreground)] leading-none opacity-0 will-change-transform tracking-wider drop-shadow-lg">
                     {/* SOVEREIGN */}
                     A World For The Few
                 </h1>
-                <p ref={subtitleRef} className="my-4 text-[#C78D17] tracking-[0.3em] text-xs md:text-sm uppercase opacity-0 will-change-transform font-light">
+                <p ref={subtitleRef} className="my-6 text-[var(--gold)] tracking-[0.4em] text-xs md:text-sm uppercase opacity-0 will-change-transform font-light via-white to-[var(--gold)] bg-[length:200%_auto]">
                     The Inner Circle
                 </p>
-                <Link href='/application/form' ref={buttonRef} className="group relative px-12 py-4 bg-transparent border border-[#C78D17]/30 hover:border-[#C78D17] transition-all duration-500 overflow-hidden cursor-pointer opacity-0 will-change-transform mt-8">
-                    <span className="relative z-10 text-[#EFD9F7] text-sm tracking-widest uppercase group-hover:text-[#3D0066] transition-colors cursor-pointer">
+                <Link href='/application/form' ref={buttonRef} className="group relative px-12 py-4 bg-transparent border border-[var(--gold)]/30 hover:border-[var(--gold)] transition-all duration-500 overflow-hidden cursor-pointer opacity-0 will-change-transform mt-8 rounded-sm">
+                    <span className="relative z-10 text-[var(--foreground)] text-sm tracking-widest uppercase group-hover:text-[var(--background)] transition-colors cursor-pointer font-semibold">
                         Request Access
                     </span>
-                    <div className="absolute inset-0 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                    <div className="absolute inset-0 bg-[var(--gold)] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 </Link>
             </div>
         </section>

@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3D0066;
-  --foreground: #EFD9F7;
+  --background: #3D0066; /* Deep Purple */
+  --foreground: #FFFFFF; /* White */
+  --gold: #e3b92f; /* Metallic Gold */
+  --gold-hover: #bd9f3b; /* Darker Gold */
+  --black: #000000;
 }
 
 body {
@@ -18,16 +21,76 @@ body {
   }
 }
 
+button{
+  cursor: pointer;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.hover\:text-gold:hover {
+  color: var(--gold);
+}
+
 .btn-primary {
-  @apply px-4 py-2 bg-[#C78D17] text-[#3D0066] font-bold rounded hover:bg-[#A67512] transition-colors;
+  @apply px-6 py-3 bg-[var(--gold)] text-[var(--background)] font-bold uppercase tracking-wider rounded-sm hover:bg-[var(--gold-hover)] transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)];
 }
 
 .btn-secondary {
-  @apply px-4 py-2 border border-[#C78D17] text-[#C78D17] font-bold rounded hover:bg-[#C78D17]/10 transition-colors;
+  @apply px-6 py-3 border border-[var(--gold)] text-[var(--gold)] font-bold uppercase tracking-wider rounded-sm hover:bg-[var(--gold)] hover:text-[var(--background)] transition-all duration-300;
+}
+
+/* Animations */
+@keyframes maximize {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-maximize {
+  animation: maximize 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
 }
 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
+  100% { transform: translateX(0); } /* Reset */
   10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
   20%, 40%, 60%, 80% { transform: translateX(4px); }
 }
@@ -37,10 +100,10 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }

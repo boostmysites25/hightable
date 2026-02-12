@@ -60,16 +60,16 @@ const Content = () => {
             <div className="max-w-5xl w-full relative z-10">
                 <div className="text-center mb-16">
                     <h1 className="text-3xl md:text-5xl uppercase text-[#EFD9F7] mb-6">The Silent Accord Membership Application</h1>
-                    <div className="w-24 h-0.5 bg-[#C78D17]/50 mx-auto" />
+                    <div className="w-24 h-0.5 bg-[var(--gold)]/50 mx-auto" />
                 </div>
 
                 <div className="space-y-12">
 
                     {/* Selected Membership Plan */}
                     <div>
-                        <h2 className="text-[#C78D17] text-sm tracking-[0.2em] font-semibold uppercase mb-6">Selected Membership Plan</h2>
+                        {/* <h2 className="text-[var(--gold)] text-sm tracking-[0.2em] font-semibold uppercase mb-6">Selected Membership Plan</h2> */}
                         <div className="bg-[#EFD9F7]/5 border border-[#EFD9F7]/10 p-8 rounded-sm backdrop-blur-sm space-y-2">
-                            <div className="border-l-2 border-[#C78D17] pl-6">
+                            <div className="border-l-2 border-[var(--gold)] pl-6">
                                 <h3 className="text-[#EFD9F7] text-xl mb-4">{selectedTier.title}</h3>
                                 <p className="text-[#EFD9F7]/80 text-sm mb-1">{selectedTier.annual}</p>
                                 <p className="text-[#EFD9F7]/60 text-sm">{selectedTier.processing}</p>
@@ -84,11 +84,11 @@ const Content = () => {
 
                     {/* Before Proceeding - Dynamic */}
                     <div>
-                        <h2 className="text-[#C78D17] text-sm tracking-[0.2em] font-semibold uppercase mb-6">Before Proceeding</h2>
+                        <h2 className="text-[var(--gold)] text-sm tracking-[0.2em] font-semibold uppercase mb-6">Before Proceeding</h2>
                         <ul className="space-y-4 text-sm md:text-base font-light text-[#EFD9F7]/80 leading-relaxed">
                             {selectedTier.points.map((point, index) => (
                                 <li key={index} className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#C78D17] mt-2 shrink-0" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] mt-2 shrink-0" />
                                     <span>{point}</span>
                                 </li>
                             ))}
@@ -104,9 +104,9 @@ const Content = () => {
                     <div className="pt-8 flex flex-col items-center gap-4">
                         <Link
                             href={`/application/form?tier=${tierId}`}
-                            className="group relative px-12 py-4 bg-transparent border border-[#C78D17] hover:bg-[#C78D17] transition-all duration-300"
+                            className="group relative px-12 py-4 bg-transparent border border-[var(--gold)] hover:bg-[var(--gold)] transition-all duration-300"
                         >
-                            <span className="relative z-10 text-[#C78D17] group-hover:text-[#3D0066] font-semibold tracking-[0.2em] uppercase text-sm">
+                            <span className="relative z-10 text-[var(--gold)] group-hover:text-[#3D0066] font-semibold tracking-[0.2em] uppercase text-sm">
                                 Proceed to Review
                             </span>
                         </Link>

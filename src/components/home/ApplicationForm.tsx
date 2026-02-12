@@ -167,24 +167,24 @@ const ApplicationForm = () => {
     console.log("Application Submitted", formData);
 
     // Style Constants
-    const LABEL_CLASS = "text-[#EFD9F7] text-xs font-bold uppercase tracking-wider";
-    const INPUT_CLASS = "w-full bg-transparent border border-[#EFD9F7]/20 p-4 text-[#EFD9F7] focus:border-[#C78D17] outline-none transition-colors rounded-sm";
+    const LABEL_CLASS = "text-[var(--foreground)] text-xs font-bold uppercase tracking-wider";
+    const INPUT_CLASS = "w-full bg-transparent border border-[var(--foreground)]/20 p-4 text-[var(--foreground)] focus:border-[var(--gold)] outline-none transition-colors rounded-sm";
     const GROUP_CLASS = "flex flex-col gap-2";
     const ERROR_CLASS = "text-red-500 text-xs mt-1 animate-fade-in";
 
     return (
-        <section className="min-h-screen w-full bg-[#3D0066] text-[#EFD9F7] flex flex-col items-center p-6 md:p-24 relative">
+        <section className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)] flex flex-col items-center p-6 md:p-24 relative">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-[#000000]/40 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-[var(--black)]/40 to-transparent pointer-events-none" />
 
             <div className="max-w-5xl w-full relative z-10">
 
                 {/* Header */}
-                <div className="mb-12 flex justify-between items-end border-b border-[#C78D17]/30 pb-6">
+                <div className="mb-12 flex justify-between items-end border-b border-[var(--gold)]/30 pb-6">
                     <div>
-                        <h1 className="text-3xl uppercase tracking-wide text-[#EFD9F7]">ACCESS — THE SILENT ACCORD</h1>
+                        <h1 className="text-3xl uppercase tracking-wide text-[var(--foreground)]">ACCESS — THE SILENT ACCORD</h1>
                     </div>
-                    <div className="text-[#C78D17] text-sm font-semibold tracking-widest">
+                    <div className="text-[var(--gold)] text-sm font-semibold tracking-widest">
                         {step === 1 ? "Initial Review" : step === 2 ? "Verification" : "Final Review"}
                     </div>
                 </div>
@@ -261,7 +261,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.primaryAffiliation ? 'border-red-500' : ''} ${shakeFields.includes('primaryAffiliation') ? 'animate-shake' : ''}`}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">Organization or principal entity</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">Organization or principal entity</p>
                                         {errors.primaryAffiliation && <p className={ERROR_CLASS}>{errors.primaryAffiliation}</p>}
                                     </div>
                                     <div className={GROUP_CLASS}>
@@ -274,7 +274,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.primaryWebPresence ? 'border-red-500' : ''} ${shakeFields.includes('primaryWebPresence') ? 'animate-shake' : ''}`}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">Company Website</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">Company Website</p>
                                         {errors.primaryWebPresence && <p className={ERROR_CLASS}>{errors.primaryWebPresence}</p>}
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.primaryDomain ? 'border-red-500' : ''} ${shakeFields.includes('primaryDomain') ? 'animate-shake' : ''}`}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">Primary internet domain</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">Primary internet domain</p>
                                         {errors.primaryDomain && <p className={ERROR_CLASS}>{errors.primaryDomain}</p>}
                                     </div>
                                     <div className={GROUP_CLASS}>
@@ -318,7 +318,7 @@ const ApplicationForm = () => {
                                             className={shakeFields.includes('industry') ? 'animate-shake' : ''}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">Sector of professional focus</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">Sector of professional focus</p>
                                         {errors.industry && <p className={ERROR_CLASS}>{errors.industry}</p>}
                                         {formData.industry === 'Other' && (
                                             <div className="mt-4 animate-fade-in">
@@ -379,7 +379,7 @@ const ApplicationForm = () => {
                                         required
                                     />
                                     {errors.professionalOverview && <p className={ERROR_CLASS}>{errors.professionalOverview}</p>}
-                                    <p className="text-[#EFD9F7]/40 text-xs">A concise summary of your current scope of work and areas of focus. (Minimum 120 words)</p>
+                                    <p className="text-[var(--foreground)]/40 text-xs">A concise summary of your current scope of work and areas of focus. (Minimum 120 words)</p>
                                 </div>
 
                                 <div className={GROUP_CLASS} id="statement-interest">
@@ -393,7 +393,7 @@ const ApplicationForm = () => {
                                         required
                                     />
                                     {errors.statementOfInterest && <p className={ERROR_CLASS}>{errors.statementOfInterest}</p>}
-                                    <p className="text-[#EFD9F7]/40 text-xs">Describe your interest in the Silent Accord and the context in which access is being sought. (Minimum 120 words)</p>
+                                    <p className="text-[var(--foreground)]/40 text-xs">Describe your interest in the Silent Accord and the context in which access is being sought. (Minimum 120 words)</p>
                                 </div>
                             </div>
                         </>
@@ -418,7 +418,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.email ? 'border-red-500' : ''} ${shakeFields.includes('email') ? 'animate-shake' : ''}`}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">As registered</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">As registered</p>
                                         {errors.email && <p className={ERROR_CLASS}>{errors.email}</p>}
                                     </div>
                                     <div className={GROUP_CLASS}>
@@ -462,7 +462,7 @@ const ApplicationForm = () => {
                                             className={`${INPUT_CLASS} ${errors.dob ? 'border-red-500' : ''} ${shakeFields.includes('dob') ? 'animate-shake' : ''}`}
                                             required
                                         />
-                                        <p className="text-[#EFD9F7]/40 text-xs">DD . MM . YYYY (Pull out calendar)</p>
+                                        <p className="text-[var(--foreground)]/40 text-xs">DD . MM . YYYY (Pull out calendar)</p>
                                         {errors.dob && <p className={ERROR_CLASS}>{errors.dob}</p>}
                                     </div> */}
                                     <div className={GROUP_CLASS}>
@@ -549,8 +549,8 @@ const ApplicationForm = () => {
                                 </div> */}
 
                                 {/* Administrative Contact */}
-                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
-                                    <h2 className="text-[#EFD9F7]/80 text-sm uppercase tracking-widest">Administrative Contact (Optional)</h2>
+                                <div className="space-y-8 pt-8 border-t border-[var(--foreground)]/10">
+                                    <h2 className="text-[var(--foreground)]/80 text-sm uppercase tracking-widest">Administrative Contact (Optional)</h2>
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                         <div className={GROUP_CLASS}>
                                             <label className={LABEL_CLASS}>Administrative Contact Name (Optional)</label>
@@ -588,12 +588,12 @@ const ApplicationForm = () => {
                                 </div>
 
                                 {/* Documentation */}
-                                <div className="space-y-8 pt-8 border-t border-[#EFD9F7]/10">
-                                    <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Documentation</h2>
+                                <div className="space-y-8 pt-8 border-t border-[var(--foreground)]/10">
+                                    <h2 className="text-[var(--foreground)] text-xl uppercase tracking-wide">Documentation</h2>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className={GROUP_CLASS}>
                                             <label className={LABEL_CLASS}>* Identification Photograph</label>
-                                            <div className={`relative border border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors ${errors.profilePicture ? 'border-red-500 bg-red-500/10' : 'border-[#EFD9F7]/30 hover:border-[#C78D17] hover:bg-[#C78D17]/5'} ${shakeFields.includes('profilePicture') ? 'animate-shake' : ''}`}>
+                                            <div className={`relative border border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors ${errors.profilePicture ? 'border-red-500 bg-red-500/10' : 'border-[var(--foreground)]/30 hover:border-[var(--gold)] hover:bg-[var(--gold)]/5'} ${shakeFields.includes('profilePicture') ? 'animate-shake' : ''}`}>
                                                 <input
                                                     type="file"
                                                     accept="image/*"
@@ -601,9 +601,9 @@ const ApplicationForm = () => {
                                                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                                                 />
                                                 <div className="flex flex-col items-center gap-2 pointer-events-none">
-                                                    <Camera className="w-8 h-8 text-[#EFD9F7]" />
-                                                    <span className="font-semibold text-sm text-[#EFD9F7]">{formData.profilePicture ? formData.profilePicture.name : 'Click to Upload'}</span>
-                                                    <span className="text-[#EFD9F7]/50 text-xs">
+                                                    <Camera className="w-8 h-8 text-[var(--foreground)]" />
+                                                    <span className="font-semibold text-sm text-[var(--foreground)]">{formData.profilePicture ? formData.profilePicture.name : 'Click to Upload'}</span>
+                                                    <span className="text-[var(--foreground)]/50 text-xs">
                                                         Clear, recent photograph for verification purposes only.<br />
                                                         (Maximum size: 5MB)
                                                     </span>
@@ -614,7 +614,7 @@ const ApplicationForm = () => {
 
                                         <div className={GROUP_CLASS}>
                                             <label className={LABEL_CLASS}>* Government-Issued Identification</label>
-                                            <div className={`relative border border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors ${errors.idDocument ? 'border-red-500 bg-red-500/10' : 'border-[#EFD9F7]/30 hover:border-[#C78D17] hover:bg-[#C78D17]/5'} ${shakeFields.includes('idDocument') ? 'animate-shake' : ''}`}>
+                                            <div className={`relative border border-dashed rounded-lg p-6 flex flex-col items-center justify-center text-center transition-colors ${errors.idDocument ? 'border-red-500 bg-red-500/10' : 'border-[var(--foreground)]/30 hover:border-[var(--gold)] hover:bg-[var(--gold)]/5'} ${shakeFields.includes('idDocument') ? 'animate-shake' : ''}`}>
                                                 <input
                                                     type="file"
                                                     accept="image/*,.pdf"
@@ -622,9 +622,9 @@ const ApplicationForm = () => {
                                                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                                                 />
                                                 <div className="flex flex-col items-center gap-2 pointer-events-none">
-                                                    <CreditCard className="w-8 h-8 text-[#EFD9F7]" />
-                                                    <span className="font-semibold text-sm text-[#EFD9F7]">{formData.idDocument ? formData.idDocument.name : 'Click to Upload'}</span>
-                                                    <span className="text-[#EFD9F7]/50 text-xs">
+                                                    <CreditCard className="w-8 h-8 text-[var(--foreground)]" />
+                                                    <span className="font-semibold text-sm text-[var(--foreground)]">{formData.idDocument ? formData.idDocument.name : 'Click to Upload'}</span>
+                                                    <span className="text-[var(--foreground)]/50 text-xs">
                                                         Clear, recent photograph for verification purposes only.<br />
                                                         (Maximum size: 5MB)
                                                     </span>
@@ -643,7 +643,7 @@ const ApplicationForm = () => {
                         <>
                             {/* Access Tier Selection */}
                             <div className="space-y-8">
-                                <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Access Tier Selection</h2>
+                                <h2 className="text-[var(--foreground)] text-xl uppercase tracking-wide">Access Tier Selection</h2>
 
                                 <div className="grid grid-cols-1 gap-4">
                                     {[
@@ -654,34 +654,34 @@ const ApplicationForm = () => {
                                         <div
                                             key={tier.id}
                                             onClick={() => setSelectedTier(tier.id)}
-                                            className={`border rounded-lg p-6 cursor-pointer transition-all ${selectedTier === tier.id ? 'border-[#C78D17] bg-[#C78D17]/10' : 'border-[#EFD9F7]/30 hover:border-[#EFD9F7]/60'}`}
+                                            className={`border rounded-lg p-6 cursor-pointer transition-all ${selectedTier === tier.id ? 'border-[var(--gold)] bg-[var(--gold)]/10' : 'border-[var(--foreground)]/30 hover:border-[var(--foreground)]/60'}`}
                                         >
-                                            <div className="font-semibold text-lg text-[#EFD9F7]">{tier.title}</div>
+                                            <div className="font-semibold text-lg text-[var(--foreground)]">{tier.title}</div>
                                             <div className="text-sm mt-2">
-                                                <span className="text-[#EFD9F7]/80">Annual Consideration: </span>
-                                                <span className="font-medium text-[#EFD9F7]">{tier.price} (Excl. Tax)</span>
+                                                <span className="text-[var(--foreground)]/80">Annual Consideration: </span>
+                                                <span className="font-medium text-[var(--foreground)]">{tier.price} (Excl. Tax)</span>
                                             </div>
-                                            <div className="text-[#EFD9F7]/50 text-xs italic mt-1">{tier.note}</div>
+                                            <div className="text-[var(--foreground)]/50 text-xs italic mt-1">{tier.note}</div>
                                         </div>
                                     ))}
                                 </div>
 
-                                <div className="text-[#EFD9F7]/60 text-sm">
-                                    Initial Processing: <span className="text-[#EFD9F7]">USD 500</span> (One-time, Non-Refundable, Excl. Tax) *
+                                <div className="text-[var(--foreground)]/60 text-sm">
+                                    Initial Processing: <span className="text-[var(--foreground)]">USD 500</span> (One-time, Non-Refundable, Excl. Tax) *
                                     <br />
-                                    <span className="text-xs text-[#EFD9F7]/40 block mt-2 leading-relaxed">
+                                    <span className="text-xs text-[var(--foreground)]/40 block mt-2 leading-relaxed">
                                         Billing information is collected to facilitate review and verification. Annual consideration is processed only after access has been approved.
                                     </span>
                                 </div>
 
                                 {/* Billing Information */}
-                                <div className="space-y-6 pt-8 border-t border-[#EFD9F7]/10">
-                                    <h2 className="text-[#EFD9F7] text-xl uppercase tracking-wide">Billing Information</h2>
+                                <div className="space-y-6 pt-8 border-t border-[var(--foreground)]/10">
+                                    <h2 className="text-[var(--foreground)] text-xl uppercase tracking-wide">Billing Information</h2>
 
                                     <div className="space-y-2">
-                                        <h3 className="font-semibold text-[#EFD9F7]">Payment Method</h3>
-                                        <h4 className="font-medium text-[#EFD9F7]">Credit Card</h4>
-                                        <p className="text-[#EFD9F7]/40 text-xs">Select the method to be used for processing verification charges.</p>
+                                        <h3 className="font-semibold text-[var(--foreground)]">Payment Method</h3>
+                                        <h4 className="font-medium text-[var(--foreground)]">Credit Card</h4>
+                                        <p className="text-[var(--foreground)]/40 text-xs">Select the method to be used for processing verification charges.</p>
                                     </div>
 
                                     <div className={GROUP_CLASS}>
@@ -738,18 +738,18 @@ const ApplicationForm = () => {
                                 </div>
 
                                 {/* Notices */}
-                                <div className="space-y-6 pt-8 border-t border-[#EFD9F7]/10">
+                                <div className="space-y-6 pt-8 border-t border-[var(--foreground)]/10">
                                     <div>
-                                        <h3 className="text-[#EFD9F7]/60 text-sm font-semibold mb-2">Authorization Notice </h3>
-                                        <p className="text-[#EFD9F7]/50 text-xs leading-relaxed">
+                                        <h3 className="text-[var(--foreground)]/60 text-sm font-semibold mb-2">Authorization Notice </h3>
+                                        <p className="text-[var(--foreground)]/50 text-xs leading-relaxed">
                                             By providing billing information, you authorize The Silent Accord to process the non-refundable initial processing charge (Excl. Tax) for review purposes.
                                             <br />
                                             No annual consideration will be processed unless access is approved.
                                         </p>
                                     </div>
                                     <div>
-                                        <h3 className="text-[#EFD9F7] font-semibold mb-2">Review Notice</h3>
-                                        <p className="text-[#EFD9F7]/70 text-sm leading-relaxed">
+                                        <h3 className="text-[var(--foreground)] font-semibold mb-2">Review Notice</h3>
+                                        <p className="text-[var(--foreground)]/70 text-sm leading-relaxed">
                                             Please review all details carefully prior to submission.
                                             <br />
                                             Submissions are reviewed privately and without fixed timelines. Not all reviews receive further correspondence.
@@ -758,11 +758,11 @@ const ApplicationForm = () => {
                                 </div>
 
                                 {/* Consent */}
-                                <div className="space-y-4 pt-8 border-t border-[#EFD9F7]/10">
-                                    <h3 className="text-[#EFD9F7] font-semibold">Consent to Review and Processing</h3>
+                                <div className="space-y-4 pt-8 border-t border-[var(--foreground)]/10">
+                                    <h3 className="text-[var(--foreground)] font-semibold">Consent to Review and Processing</h3>
 
                                     <label className="flex items-start gap-4 cursor-pointer group">
-                                        <div className={`mt-1 w-5 h-5 border rounded flex items-center justify-center transition-colors ${formData.consentProcessing ? 'bg-[#C78D17] border-[#C78D17]' : 'border-[#EFD9F7]/50 group-hover:border-[#C78D17]'}`}>
+                                        <div className={`mt-1 w-5 h-5 border rounded flex items-center justify-center transition-colors ${formData.consentProcessing ? 'bg-[var(--gold)] border-[var(--gold)]' : 'border-[var(--foreground)]/50 group-hover:border-[var(--gold)]'}`}>
                                             {formData.consentProcessing && <span className="text-white text-xs">✔</span>}
                                         </div>
                                         <input
@@ -772,13 +772,13 @@ const ApplicationForm = () => {
                                             onChange={handleChange}
                                             className="hidden"
                                         />
-                                        <span className="text-[#EFD9F7]/80 text-sm flex-1">
+                                        <span className="text-[var(--foreground)]/80 text-sm flex-1">
                                             I authorize The Silent Accord to review and process the information provided for the purposes of access consideration.
                                         </span>
                                     </label>
 
                                     <label className="flex items-start gap-4 cursor-pointer group">
-                                        <div className={`mt-1 w-5 h-5 border rounded flex items-center justify-center transition-colors ${formData.consentTerms ? 'bg-[#C78D17] border-[#C78D17]' : 'border-[#EFD9F7]/50 group-hover:border-[#C78D17]'}`}>
+                                        <div className={`mt-1 w-5 h-5 border rounded flex items-center justify-center transition-colors ${formData.consentTerms ? 'bg-[var(--gold)] border-[var(--gold)]' : 'border-[var(--foreground)]/50 group-hover:border-[var(--gold)]'}`}>
                                             {formData.consentTerms && <span className="text-white text-xs">✔</span>}
                                         </div>
                                         <input
@@ -788,8 +788,8 @@ const ApplicationForm = () => {
                                             onChange={handleChange}
                                             className="hidden"
                                         />
-                                        <span className="text-[#EFD9F7]/80 text-sm flex-1">
-                                            I acknowledge the applicable <a href="/terms-of-service" target="_blank" className="underline hover:text-[#C78D17] transition-colors">Terms of Access</a> and <a href="/privacy-policy" target="_blank" className="underline hover:text-[#C78D17] transition-colors">Privacy Policy</a>.
+                                        <span className="text-[var(--foreground)]/80 text-sm flex-1">
+                                            I acknowledge the applicable <a href="/terms-of-service" target="_blank" className="underline hover:text-[var(--gold)] transition-colors">Terms of Access</a> and <a href="/privacy-policy" target="_blank" className="underline hover:text-[var(--gold)] transition-colors">Privacy Policy</a>.
                                         </span>
                                     </label>
                                 </div>
@@ -798,10 +798,10 @@ const ApplicationForm = () => {
                     )}
 
                     {/* Navigation Buttons */}
-                    <div className="grid gap-8 pt-12 border-t border-[#C78D17]/30 mt-12">
+                    <div className="grid gap-8 pt-12 border-t border-[var(--gold)]/30 mt-12">
                         <div className="flex justify-between items-center w-full">
                             {step > 1 ? (
-                                <button onClick={handlePrev} className="text-[#EFD9F7]/60 hover:text-[#C78D17] uppercase tracking-widest text-sm transition-colors">
+                                <button onClick={handlePrev} className="text-[#EFD9F7]/60 hover:text-[var(--gold)] uppercase tracking-widest text-sm transition-colors">
                                     Return
                                 </button>
                             ) : (
@@ -811,7 +811,7 @@ const ApplicationForm = () => {
                             {step < 3 ? (
                                 <button
                                     onClick={handleNext}
-                                    className="px-12 py-4 bg-[#C78D17] text-[#3D0066] font-semibold uppercase tracking-widest text-sm hover:bg-[#EFD9F7] transition-colors"
+                                    className="px-12 py-4 bg-[var(--gold)] text-[#3D0066] font-semibold uppercase tracking-widest text-sm hover:bg-[#EFD9F7] transition-colors"
                                 >
                                     Continue Review
                                 </button>
@@ -830,7 +830,7 @@ const ApplicationForm = () => {
                                         disabled={!formData.consentProcessing || !formData.consentTerms}
                                         className={`px-12 py-4 font-semibold uppercase tracking-widest text-sm transition-colors w-full md:w-auto ${(!formData.consentProcessing || !formData.consentTerms)
                                             ? 'bg-[#EFD9F7]/10 text-[#EFD9F7]/30 cursor-not-allowed'
-                                            : 'bg-[#C78D17] text-[#3D0066] hover:bg-[#EFD9F7]'
+                                            : 'bg-[var(--gold)] text-[var(--background)] hover:bg-[var(--gold-hover)]'
                                             }`}
                                     >
                                         Submit For Review
@@ -844,7 +844,7 @@ const ApplicationForm = () => {
                                 <a
                                     href="/disclaimer"
                                     target="_blank"
-                                    className="text-[#EFD9F7]/40 hover:text-[#C78D17] text-xs uppercase tracking-widest transition-colors"
+                                    className="text-[#EFD9F7]/40 hover:text-[var(--gold)] text-xs uppercase tracking-widest transition-colors"
                                 >
                                     Disclaimer
                                 </a>

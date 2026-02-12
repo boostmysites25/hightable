@@ -8,13 +8,13 @@ export default function PrivacyPolicy() {
             <div className="max-w-4xl mx-auto px-6 pt-32 pb-24">
                 <div className="mb-12">
                     <h1 className="text-4xl md:text-5xl font-medium uppercase mb-4 text-[#EFD9F7] tracking-wider">Privacy Policy</h1>
-                    <div className="w-24 h-0.5 bg-[#C78D17]" />
+                    <div className="w-24 h-0.5 bg-[var(--gold)]" />
                     <p className="mt-4 text-[#EFD9F7]/60 italic">Last Updated: January 27, 2026</p>
                 </div>
 
                 <div className="space-y-12 text-[#EFD9F7]/80 leading-relaxed font-light">
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">1. Purpose and Scope</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">1. Purpose and Scope</h2>
                         <p className="mb-4">
                             This Privacy Policy describes how The Silent Accord collects, uses, retains, and protects information submitted in connection with access review, approved participation, and related private correspondence.
                             <br />
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">2. Categories of Information Collected</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">2. Categories of Information Collected</h2>
                         <p className="mb-4">Information may include, but is not limited to, the following categories:</p>
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Identity and Contact Information submitted during access review or correspondence</li>
@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">3. Use of Information</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">3. Use of Information</h2>
                         <p className="mb-4">Information is used solely for the following purposes:</p>
                         <ul className="list-disc pl-6 space-y-2">
                             <li>Conducting access review and eligibility verification</li>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">4. Confidentiality and Limited Disclosure</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">4. Confidentiality and Limited Disclosure</h2>
                         <p className="mb-4">
                             All information is treated as confidential and accessed only by authorized personnel acting within the scope of their responsibilities.
                             <br />
@@ -62,16 +62,14 @@ export default function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">5. Data Retention</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">5. Data Retention</h2>
                         <p className="mb-4">
-                            Information may be retained for internal records, compliance, audit, security, and risk-management purposes, including where access is not granted or is later withdrawn.
-                            <br />
-                            Retention periods are determined at the discretion of The Silent Accord, taking into account operational requirements and applicable legal obligations.
+                            Information is retained at the discretion of The Silent Accord based on operational, legal, security, compliance, and risk-management considerations.
                         </p>
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">6. Data Security and Compliance Framework</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">6. Data Security and Compliance Framework</h2>
                         <p className="mb-4">
                             The Silent Accord implements reasonable administrative, technical, and organizational safeguards designed to protect information against unauthorized access, misuse, or disclosure.
                             <br />
@@ -91,22 +89,25 @@ export default function PrivacyPolicy() {
                             <img
                                 src="/assets/security-badges.png"
                                 alt="Security Certifications"
-                                className="w-full max-w-xs rounded-lg shadow-2xl border border-[#C78D17]/20 bg-[#3D0066]"
+                                className="w-full max-w-xs rounded-lg shadow-2xl border border-[var(--gold)]/20 bg-[#3D0066]"
                             />
                         </div>
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">7. Rights and Inquiries</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">7. Rights and Inquiries</h2>
                         <p className="mb-4">
                             Requests regarding information handling may be submitted through private correspondence.
                             <br />
                             Such requests are evaluated on a case-by-case basis and may be subject to verification of identity, authority, and applicable legal or retention requirements. Responses are issued at discretion.
                         </p>
+                        <p className="mb-4">
+                            Requests that are excessive, repetitive, or manifestly unfounded may not receive a response. All determinations are made at the discretion of The Silent Accord.
+                        </p>
                     </section>
 
                     <section>
-                        <h2 className="text-[#C78D17] text-xl font-medium uppercase tracking-wider mb-4">8. Amendments</h2>
+                        <h2 className="text-[var(--gold)] text-xl font-medium uppercase tracking-wider mb-4">8. Amendments</h2>
                         <p className="mb-4">
                             This Privacy Policy may be updated periodically to reflect legal, regulatory, or operational changes.
                             <br />
@@ -118,7 +119,7 @@ export default function PrivacyPolicy() {
 
                     {/* Jurisdictional Alignment */}
                     <section>
-                        <h2 className="text-[#C78D17] text-lg font-medium uppercase tracking-wider mb-8">Jurisdictional Alignment and Regulatory Notices</h2>
+                        <h2 className="text-[var(--gold)] text-lg font-medium uppercase tracking-wider mb-8">Jurisdictional Alignment and Regulatory Notices</h2>
                         <p className="italic text-sm mb-8">The Silent Accord operates across multiple jurisdictions and processes personal data in accordance with applicable data protection laws, where required.</p>
 
                         <div className="space-y-8">

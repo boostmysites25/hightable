@@ -74,7 +74,7 @@ const HomeNav = () => {
     return (
         <>
             {/* Fixed Nav Overlay */}
-            <nav className={`fixed inset-0 z-50 pointer-events-none px-4 py-3 flex justify-between items-center md:p-12 h-fit text-[#EFD9F7] ${isScrolled ? "backdrop-blur-sm" : ""}`}>
+            <nav className={`fixed inset-0 z-50 pointer-events-none px-4 py-3 flex justify-between items-center md:p-12 h-fit text-[var(--foreground)] ${isScrolled ? "backdrop-blur-sm" : ""}`}>
 
                 {/* Top Left - Logo/Home */}
                 <div className="md:absolute top-6 left-6 md:top-12 md:left-12 pointer-events-auto z-60">
@@ -90,8 +90,8 @@ const HomeNav = () => {
                         className="w-12 h-12 flex flex-col justify-center items-end gap-1.5 group cursor-pointer"
                         aria-label="Toggle Menu"
                     >
-                        <span className={`block h-0.5 bg-[#C78D17] transition-all duration-500 ease-out ${isMenuOpen ? 'w-6 rotate-45 translate-y-[3.5px]' : 'w-8 group-hover:w-6'}`} />
-                        <span className={`block h-0.5 bg-[#C78D17] transition-all duration-500 ease-out ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-[3.5px]' : 'w-5 group-hover:w-8'}`} />
+                        <span className={`block h-0.5 bg-[var(--gold)] transition-all duration-500 ease-out ${isMenuOpen ? 'w-6 rotate-45 translate-y-[3.5px]' : 'w-8 group-hover:w-6'}`} />
+                        <span className={`block h-0.5 bg-[var(--gold)] transition-all duration-500 ease-out ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-[3.5px]' : 'w-5 group-hover:w-8'}`} />
                     </button>
                 </div>
             </nav>
@@ -99,7 +99,7 @@ const HomeNav = () => {
             {/* Offcanvas Menu */}
             <div
                 ref={menuRef}
-                className="fixed inset-0 bg-[#24003d] z-40 flex items-center justify-center pointer-events-auto"
+                className="fixed inset-0 bg-[var(--background)] z-40 flex items-center justify-center pointer-events-auto"
                 style={{ clipPath: 'circle(0% at 100% 0%)' }}
             >
                 <div className="flex flex-col items-center gap-8 md:gap-12 text-center pointer-events-auto">
@@ -115,10 +115,10 @@ const HomeNav = () => {
                             href={item.href}
                             ref={addToRefs}
                             onClick={() => setIsMenuOpen(false)}
-                            className="group relative text-2xl md:text-4xl uppercase text-[#EFD9F7] hover:text-[#C78D17] transition-colors tracking-widest opacity-0"
+                            className="group relative text-2xl md:text-4xl uppercase text-[var(--foreground)] hover:text-[var(--gold)] transition-colors tracking-widest opacity-0"
                         >
                             <span className="relative z-10">{item.name}</span>
-                            <span className="absolute left-0 -bottom-2 w-full h-0.5 bg-[#C78D17] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center" />
+                            <span className="absolute left-0 -bottom-2 w-full h-0.5 bg-[var(--gold)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center" />
                         </Link>
                     ))}
                 </div>

@@ -21,17 +21,17 @@ export default function ThankYouPage() {
 
                 {/* Icon/Symbol */}
                 <div className="mb-8">
-                    <div className="w-20 h-20 mx-auto rounded-full border border-[#C78D17] flex items-center justify-center bg-[#C78D17]/10 animate-pulse-slow">
-                        <span className="text-4xl text-[#C78D17]">✓</span>
+                    <div className="w-20 h-20 mx-auto rounded-full border border-[var(--gold)] flex items-center justify-center bg-[var(--gold)]/10 animate-pulse-slow">
+                        <span className="text-4xl text-[var(--gold)]">✓</span>
                     </div>
                 </div>
 
                 <div className="space-y-6">
                     <h1 className="text-4xl md:text-5xl uppercase tracking-widest text-[#EFD9F7] font-light">
-                        Application <span className="block text-[#C78D17] mt-3">Received</span>
+                        Application <span className="block text-[var(--gold)] mt-3">Received</span>
                     </h1>
 
-                    <div className="w-24 h-px bg-linear-to-r from-transparent via-[#C78D17] to-transparent mx-auto my-8 opacity-50" />
+                    <div className="w-24 h-px bg-linear-to-r from-transparent via-[var(--gold)] to-transparent mx-auto my-8 opacity-50" />
 
                     <p className="text-[#EFD9F7]/80 leading-relaxed text-lg font-light">
                         Thank you for submitting your application to <span className="text-[#EFD9F7] font-semibold">The Silent Accord</span>.
@@ -44,7 +44,7 @@ export default function ThankYouPage() {
                 <div className="pt-8">
                     <Link
                         href="/"
-                        className="inline-block px-12 py-4 border border-[#C78D17] text-[#C78D17] font-semibold uppercase tracking-widest text-sm hover:bg-[#C78D17] hover:text-[#3D0066] transition-all duration-300"
+                        className="inline-block px-12 py-4 border border-[var(--gold)] text-[var(--gold)] font-semibold uppercase tracking-widest text-sm hover:bg-[var(--gold)] hover:text-[#3D0066] transition-all duration-300"
                     >
                         Return to Home
                     </Link>
